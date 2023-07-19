@@ -1,0 +1,37 @@
+<resources>
+
+    <string name="number1">1</string>
+    <string name="number2">2</string>
+    <string name="number3">3</string>
+    <string name="number4">4</string>
+    <string name="number5">5</string>
+    <string name="number6">6</string>
+    <string name="number7">7</string>
+    <string name="number8">8</string>
+    <string name="number9">9</string>
+    <string name="number10">10</string>
+    <string name="number11">11</string>
+    <string name="number12">12</string>
+    <string name="number13">13</string>
+    <string name="number14">14</string>
+    <string name="number15">15</string>
+    <string name="numberEmpty"> </string>
+
+    <string name="app_name">MyTag</string>
+    <string name="game_name">MyTag</string>
+    <string name="rules_button">Правила</string>
+    <string name="control_button">Управление</string>
+    <string name="Ok">Понятно</string>
+    <string name="start_game_button">Начать игру</string>
+    <string name="rules">\t\t\t\tПРАВИЛА ИГРЫ \"ПЯТНАШКИ\":
+        \n\nПеремещая костяшки по коробке, добиться упорядочивания их по номерам, желательно сделав, как можно меньше перемещений.
+        \n\nИгровое поле будет представлено с рандомно расположенными костяшками, Ваша задача перемещениями цифр добиться следующего результата:\n</string>
+
+    <string name="control">ОЗНАКОМЬТЕСЬ С УПРАВЛЕНИЕМ:
+        \n\nВыбор можно осуществить во время игры введя номер нужной костяшки в консоль и нажав ENTER.
+        \n\nnew  game (n) - начинает новую игу
+        \n\nsave game (s) - сохраняет игру в один из слотов
+        \n\nload game (l) - загружает игру из слота
+        \n\nquit game (q) - заканчивает игру</string>
+    <string name="back">back</string>
+</resources>
