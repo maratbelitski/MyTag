@@ -1,5 +1,7 @@
 <resources>
 
+    <string name="app_name">MyTag</string>
+
     <string name="number1">1</string>
     <string name="number2">2</string>
     <string name="number3">3</string>
@@ -17,12 +19,17 @@
     <string name="number15">15</string>
     <string name="numberEmpty"> </string>
 
-    <string name="app_name">MyTag</string>
-    <string name="game_name">MyTag</string>
     <string name="rules_button">Правила</string>
     <string name="control_button">Управление</string>
+
     <string name="Ok">Понятно</string>
-    <string name="start_game_button">Начать игру</string>
+
+    <string name="to_game_button">К игре</string>
+    <string name="start_game_button">Старт</string>
+    <string name="stop_game_button">Закончить</string>
+
+
+
     <string name="rules">\t\t\t\tПРАВИЛА ИГРЫ \"ПЯТНАШКИ\":
         \n\nПеремещая костяшки по коробке, добиться упорядочивания их по номерам, желательно сделав, как можно меньше перемещений.
         \n\nИгровое поле будет представлено с рандомно расположенными костяшками, Ваша задача перемещениями цифр добиться следующего результата:\n</string>

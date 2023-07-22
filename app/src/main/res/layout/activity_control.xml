@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#586068"
+    android:orientation="vertical"
     android:padding="15dp"
     tools:context=".RulesActivity">
-
-<FrameLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="center"
-        android:src="@drawable/fon" />
+        android:scaleType="center" />
 
     <TextView
         android:id="@+id/text_control"
@@ -42,6 +37,5 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white"
         android:textSize="20sp" />
-</FrameLayout>
 
-</ScrollView>
+</LinearLayout>
