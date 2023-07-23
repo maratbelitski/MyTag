@@ -1,6 +1,11 @@
 package com.example.mytag;
+import static com.example.mytag.StartActivity.matrixSearch;
+import static com.example.mytag.StartActivity.valueTextNow;
+import static com.example.mytag.StartActivity.valuesTagArray;
+import static com.example.mytag.StartActivity.valuesViewList;
+import static com.example.mytag.StartActivity.positionNewEmpty;
+import static com.example.mytag.StartActivity.positionNewValue;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,25 +33,98 @@ public interface Methods {
         return matrix;
     }
 
-//
-//        String[][] array = new String[4][4];
-//        int count = 0;
-//        for (int i = 0; i < array.length; i++) {
-//            for (int j = 0; j < array[i].length; j++) {
-//                array[i][j]=list.get(count);
-//                count++;
-//            }
-//        }
-//        return array;
-//      }
 
     default void setAllViewMatrix(List<MyView> listView, List<String> list) {
         for (int i = 0; i < 16; i++) {
             listView.get(i).getMyTextView().setText(list.get(i));
-            if(list.get(i).equals(" ")) {
+            if (list.get(i).equals(" ")) {
                 listView.get(i).getMyImageView().setImageResource(R.drawable.logo_transparante);
-            }else{
+            } else {
                 listView.get(i).getMyImageView().setImageResource(R.drawable.hex_tag);
+            }
+        }
+    }
+
+    default void changePositionView(int positionNewEmpty, int positionNewValue) {
+
+        if ((positionNewValue != -1) || (positionNewEmpty != -1)) {
+            valuesViewList.get(positionNewEmpty - 1).getMyImageView().setImageResource(R.drawable.logo_transparante);
+            valuesViewList.get(positionNewEmpty - 1).getMyTextView().setText(R.string.numberEmpty);
+
+            valuesViewList.get(positionNewValue - 1).getMyImageView().setImageResource(R.drawable.hex_tag);
+            valuesViewList.get(positionNewValue - 1).getMyTextView().setText(valueTextNow);
+        }
+    }
+
+    default void findPosition() {
+        String temp;
+        boolean exit = false;
+        String empty = " ";
+
+        for (int i = 1; i < matrixSearch.length - 1 && !exit; i++) {
+            for (int j = 1; j < matrixSearch[i].length - 1 && !exit; j++) {
+
+                if (valueTextNow.equals(valuesTagArray[i][j])) {
+
+                    if (empty.equals(valuesTagArray[i][j - 1])) {
+                        temp = valuesTagArray[i][j - 1];
+                        valuesTagArray[i][j - 1] = valueTextNow;
+                        valuesTagArray[i][j] = temp;
+
+                        positionNewEmpty = matrixSearch[i][j];
+                        positionNewValue = matrixSearch[i][j - 1];
+                        exit = true;
+
+                    } else if (empty.equals(valuesTagArray[i][j + 1])) {
+                        temp = valuesTagArray[i][j + 1];
+                        valuesTagArray[i][j + 1] = valueTextNow;
+                        valuesTagArray[i][j] = temp;
+
+                        positionNewEmpty = matrixSearch[i][j];
+                        positionNewValue = matrixSearch[i][j + 1];
+                        exit = true;
+
+                    } else if (empty.equals(valuesTagArray[i - 1][j])) {
+                        temp = valuesTagArray[i - 1][j];
+                        valuesTagArray[i - 1][j] = valueTextNow;
+                        valuesTagArray[i][j] = temp;
+
+                        positionNewEmpty = matrixSearch[i][j];
+                        positionNewValue = matrixSearch[i - 1][j];
+                        exit = true;
+
+                    } else {
+                        temp = valuesTagArray[i + 1][j];
+                        valuesTagArray[i + 1][j] = valueTextNow;
+                        valuesTagArray[i][j] = temp;
+
+                        positionNewEmpty = matrixSearch[i][j];
+                        positionNewValue = matrixSearch[i + 1][j];
+                        exit = true;
+                    }
+                }
+            }
+        }
+    }
+
+    default void ClickOnTag() {
+        boolean exit = false;
+        String empty = " ";
+
+        for (int i = 1; i < valuesTagArray.length - 1 && !exit; i++) {
+            for (int j = 1; j < valuesTagArray[i].length - 1 && !exit; j++) {
+
+                if (valueTextNow.equals(valuesTagArray[i][j])) {
+                    if (empty.equals(valuesTagArray[i][j - 1])
+                            || empty.equals(valuesTagArray[i][j + 1])
+                            || empty.equals(valuesTagArray[i - 1][j])
+                            || empty.equals(valuesTagArray[i + 1][j])) {
+
+                        findPosition();
+                        changePositionView(positionNewEmpty, positionNewValue);
+                        exit = true;
+                    }
+                }
             }
         }
     }

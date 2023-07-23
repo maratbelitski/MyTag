@@ -1,15 +1,17 @@
 package com.example.mytag;
-
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.List;
 
 /**
  * @author Belitski Marat
  * @date 20.07.2023
  */
 public class MyView {
-   private TextView myTextView;
-    private ImageView myImageView;
+    public List<MyView> valuesViewList;
+   private final TextView myTextView;
+    private final ImageView myImageView;
 
     public MyView(TextView myTextView, ImageView myImageView) {
         this.myTextView = myTextView;

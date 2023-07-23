@@ -15,19 +15,22 @@
         tools:ignore="LockedOrientationActivity">
         <activity
             android:name=".StartActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ControlActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:label="MyTag. Управление" /> <!-- android:screenOrientation="portrait"   закрепляет активность на дисплее только в таком положении -->
         <activity
             android:name=".RulesActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:label="MyTag. Правила" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/NoActionBar"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>

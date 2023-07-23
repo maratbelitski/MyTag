@@ -1,61 +1,46 @@
 package com.example.mytag;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class StartActivity extends AppCompatActivity implements Methods {
     private boolean goNoGo = false;
-    private final String empty = " ";
+    public static String valueTextNow;
+    public static int positionNewEmpty = -1;
+    public static int positionNewValue = -1;
+    public static List<String> valuesTagList;
+    public static List<MyView> valuesViewList;
+    public static String[][] valuesTagArray;
 
-    private String temp;
-    String[][] matrixWin = new String[][]{
+    public static String[][] matrixWin = new String[][]{
             {"*", "*", "*", "*", "*", "*"},
             {"*", "1", "2", "3", "4", "*"},
             {"*", "5", "6", "7", "8", "*"},
             {"*", "9", "10", "11", "12", "*"},
             {"*", "13", "14", "15", " ", "*"},
-            {"*", "*", "*", "*", "*", "*"}
-    };
-
-    int[][] matrixSearch = new int[][]{
+            {"*", "*", "*", "*", "*", "*"}};
+    public static int[][] matrixSearch = new int[][]{
             {0, 0, 0, 0, 0, 0},
             {0, 1, 2, 3, 4, 0},
             {0, 5, 6, 7, 8, 0},
             {0, 9, 10, 11, 12, 0},
             {0, 13, 14, 15, 16, 0},
-            {0, 0, 0, 0, 0, 0}
-    };
+            {0, 0, 0, 0, 0, 0}};
 
     Button startGame;
     Button stopGame;
-    FrameLayout frameLayout1, frameLayout2, frameLayout3, frameLayout4, frameLayout5, frameLayout6,
-            frameLayout7, frameLayout8, frameLayout9, frameLayout10, frameLayout11, frameLayout12,
-            frameLayout13, frameLayout14, frameLayout15, frameLayout16;
 
     ImageView image1, image2, image3, image4, image5, image6, image7, image8,
             image9, image10, image11, image12, image13, image14, image15, image16;
     TextView text1, text2, text3, text4, text5, text6, text7, text8,
             text9, text10, text11, text12, text13, text14, text15, text16;
 
-    public List<String> valuesTagList;
-    public List<MyView> valuesViewList;
-    public String[][] valuesTagArray;
-
-    public String valueTextNow;
-    public int positionNewEmpty = -1;
-    public int positionNewValue = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,39 +88,18 @@ public class StartActivity extends AppCompatActivity implements Methods {
         valuesViewList.add(new MyView(text14 = findViewById(R.id.id_text14), image14 = findViewById(R.id.id_image14)));
         valuesViewList.add(new MyView(text15 = findViewById(R.id.id_text15), image15 = findViewById(R.id.id_image15)));
         valuesViewList.add(new MyView(text16 = findViewById(R.id.id_text16), image16 = findViewById(R.id.id_image16)));
-
-
     }
 
     public void showMove2(View view) {
+        valueTextNow = findValueTextNow(view);
         if (goNoGo) {
-            valueTextNow = findValueTextNow(view);
-            boolean exit = false;
-            for (int i = 1; i < valuesTagArray.length - 1 && !exit; i++) {
-                for (int j = 1; j < valuesTagArray[i].length - 1&& !exit; j++) {
-                    if (valueTextNow.equals(valuesTagArray[i][j])) {
-                        if (empty.equals(valuesTagArray[i][j - 1])
-                                || empty.equals(valuesTagArray[i][j + 1])
-                                || empty.equals(valuesTagArray[i - 1][j])
-                                || empty.equals(valuesTagArray[i + 1][j])) {
-                           // if (!valueTextNow.equals("") && !valueTextNow.equals(" ")) {
-                                findPosition();
-                                changePositionView(positionNewEmpty, positionNewValue);
-                                exit=true;
-                       // }
-                    }
-                }
-            }
-
-
-
-            }
+            ClickOnTag();
         }
     }
 
     public void startGame(View view) {
-
         goNoGo = true;
+
         Collections.shuffle(valuesTagList);
         setAllViewMatrix(valuesViewList, valuesTagList);
         valuesTagArray = listToArray(valuesTagList);
@@ -187,75 +151,4 @@ public class StartActivity extends AppCompatActivity implements Methods {
         }
         return valueTextNow;
     }
-
-    public void findPosition() {
-
-        boolean exit = false;
-        for (int i = 1; i < matrixSearch.length - 1 && !exit; i++) {
-            for (int j = 1; j < matrixSearch[i].length - 1 && !exit; j++) {
-
-                if (valueTextNow.equals(valuesTagArray[i][j])) {
-
-//                    if (empty.equals(valuesTagArray[i][j - 1])
-//                            || empty.equals(valuesTagArray[i][j + 1])
-//                            || empty.equals(valuesTagArray[i - 1][j])
-//                            || empty.equals(valuesTagArray[i + 1][j])) {
-
-                        if (empty.equals(valuesTagArray[i][j - 1])) {
-                            temp = valuesTagArray[i][j - 1];
-                            valuesTagArray[i][j - 1] = valueTextNow;//valuesTagArray[i][j];
-                            valuesTagArray[i][j] = temp;
-
-                            positionNewEmpty = matrixSearch[i][j];
-                            positionNewValue = matrixSearch[i][j - 1];
-                            exit = true;
-
-                        } else if (empty.equals(valuesTagArray[i][j + 1])) {
-                            temp = valuesTagArray[i][j + 1];
-                            valuesTagArray[i][j + 1] = valueTextNow;//valuesTagArray[i][j];
-                            valuesTagArray[i][j] = temp;
-
-                            positionNewEmpty = matrixSearch[i][j];
-                            positionNewValue = matrixSearch[i][j + 1];
-                            exit = true;
-
-                        } else if (empty.equals(valuesTagArray[i - 1][j])) {
-                            temp = valuesTagArray[i - 1][j];
-                            valuesTagArray[i - 1][j] = valueTextNow;// valuesTagArray[i][j];
-                            valuesTagArray[i][j] = temp;
-
-                            positionNewEmpty = matrixSearch[i][j];
-                            positionNewValue = matrixSearch[i - 1][j];
-                            exit = true;
-
-                        } else {
-                            temp = valuesTagArray[i + 1][j];
-                            valuesTagArray[i + 1][j] = valueTextNow;//valuesTagArray[i][j];
-                            valuesTagArray[i][j] = temp;
-
-                            positionNewEmpty = matrixSearch[i][j];
-                            positionNewValue = matrixSearch[i + 1][j];
-                            exit = true;
-                        }
-                    }
-                }
-            }
-        }
-   // }
-
-
-    public void changePositionView(int positionNewEmpty, int positionNewValue) {
-        if ((positionNewValue != -1) || (positionNewEmpty != -1)) {
-            valuesViewList.get(positionNewEmpty - 1).getMyImageView().setImageResource(R.drawable.logo_transparante);
-            valuesViewList.get(positionNewEmpty - 1).getMyTextView().setText(R.string.numberEmpty);
-
-
-            valuesViewList.get(positionNewValue - 1).getMyImageView().setImageResource(R.drawable.hex_tag);
-            valuesViewList.get(positionNewValue - 1).getMyTextView().setText(valueTextNow);
-
-
-        }
-    }
-
-
 }
