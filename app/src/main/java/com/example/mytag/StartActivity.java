@@ -1,7 +1,5 @@
 package com.example.mytag;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,16 +7,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
+
 
 
 public class StartActivity extends AppCompatActivity{
 
     public String level = "";
+    public String type = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
         ImageView image_title_game =findViewById(R.id.image_title_game);
         Spinner spinner1 = findViewById(R.id.spinner_1);
         Spinner spinner2 = findViewById(R.id.spinner_2);
@@ -50,20 +50,18 @@ public class StartActivity extends AppCompatActivity{
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
     }
 
     public void startGame(View view) {
-    int start=1;
+        Class<?> destination= MainActivity.class;
         if(level.equals("normal")) {
-            Intent intent = new Intent(this, NormalActivity.class);
-           // intent.putExtra(NormalActivity.EXTRA_START, start);
-            startActivity(intent);
-        }else {
-            Intent intent = new Intent(this, EasyActivity.class);
-            startActivity(intent);
+           destination= NormalActivity.class;
+        }else if (level.equals("easy")){
+            destination= EasyActivity.class;
         }
+        Intent intent = new Intent(this, destination);
+        startActivity(intent);
     }
 }
