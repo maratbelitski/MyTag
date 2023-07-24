@@ -1,11 +1,11 @@
 package com.example.mytag;
-import static com.example.mytag.StartActivity.matrixSearch;
-import static com.example.mytag.StartActivity.valueTextNow;
-import static com.example.mytag.StartActivity.valuesTagArray;
-import static com.example.mytag.StartActivity.valuesViewList;
-import static com.example.mytag.StartActivity.positionNewEmpty;
-import static com.example.mytag.StartActivity.positionNewValue;
-
+import static com.example.mytag.NormalActivity.matrixSearch;
+import static com.example.mytag.NormalActivity.valueTextNow;
+import static com.example.mytag.NormalActivity.valuesTagArray;
+import static com.example.mytag.NormalActivity.valuesViewList;
+import static com.example.mytag.NormalActivity.positionNewEmpty;
+import static com.example.mytag.NormalActivity.positionNewValue;
+import static com.example.mytag.NormalActivity.countSteps;
 import java.util.List;
 
 /**
@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface Methods {
     default String[][] listToArray(List<String> list) {
-
+    int count=0;
         String[][] matrix = new String[6][6];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -22,11 +22,8 @@ public interface Methods {
                     matrix[i][j] = "*";
                 }
                 if (i > 0 && i < matrix.length - 1 && j > 0 && j < matrix.length - 1) {
-                    for (String item : list) {
-                        matrix[i][j] = item;
-                        list.remove(item);
-                        break;
-                    }
+                    matrix[i][j] =list.get(count);
+                    count++;
                 }
             }
         }
@@ -40,19 +37,20 @@ public interface Methods {
             if (list.get(i).equals(" ")) {
                 listView.get(i).getMyImageView().setImageResource(R.drawable.logo_transparante);
             } else {
-                listView.get(i).getMyImageView().setImageResource(R.drawable.hex_tag);
+                listView.get(i).getMyImageView().setImageResource(R.drawable.logo_hex);
             }
         }
     }
 
     default void changePositionView(int positionNewEmpty, int positionNewValue) {
-
         if ((positionNewValue != -1) || (positionNewEmpty != -1)) {
             valuesViewList.get(positionNewEmpty - 1).getMyImageView().setImageResource(R.drawable.logo_transparante);
             valuesViewList.get(positionNewEmpty - 1).getMyTextView().setText(R.string.numberEmpty);
 
-            valuesViewList.get(positionNewValue - 1).getMyImageView().setImageResource(R.drawable.hex_tag);
+            valuesViewList.get(positionNewValue - 1).getMyImageView().setImageResource(R.drawable.logo_hex);
             valuesViewList.get(positionNewValue - 1).getMyTextView().setText(valueTextNow);
+
+            countSteps++;
         }
     }
 

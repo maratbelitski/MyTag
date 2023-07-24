@@ -19,12 +19,6 @@ public class MainActivity extends AppCompatActivity {
     startActivity(intent);
     }
 
-
-    public void showControl(View view) {
-        Intent intent = new Intent(MainActivity.this, ControlActivity.class);
-        startActivity(intent);
-    }
-
     public void showRules(View view) {
         Intent intent = new Intent(MainActivity.this, RulesActivity.class);
         startActivity(intent);

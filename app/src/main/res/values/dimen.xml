@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="size_text_tag">35sp</dimen>
+    <dimen name="size_image_tag">85dp</dimen>
+
+    <dimen name="width_button_main">225dp</dimen>
+
+    <dimen name="size_text_normal">17sp</dimen>
+    <dimen name="size_text_button">20dp</dimen>
+    <dimen name="size_text_big">25sp</dimen>
+</resources>

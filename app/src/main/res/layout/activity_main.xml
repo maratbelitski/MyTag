@@ -55,20 +55,6 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/b_control"
-            android:layout_width="195dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_buttons"
-            android:onClick="showControl"
-            android:padding="16dp"
-            android:text="@string/control_button"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-
-        <Button
             android:id="@+id/b_start_game"
             android:layout_width="195dp"
             android:layout_height="wrap_content"

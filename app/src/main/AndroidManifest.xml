@@ -11,28 +11,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar"
-        tools:targetApi="33"
-        tools:ignore="LockedOrientationActivity">
+        tools:ignore="LockedOrientationActivity"
+        tools:targetApi="33" >
+        <activity
+            android:name=".NormalActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".EasyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".StartActivity"
-            android:screenOrientation="portrait"
-            android:exported="false" />
-        <activity
-            android:name=".ControlActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
-            android:label="MyTag. Управление" /> <!-- android:screenOrientation="portrait"   закрепляет активность на дисплее только в таком положении -->
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RulesActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
-            android:label="MyTag. Правила" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBar"
-            tools:ignore="LockedOrientationActivity">
+            tools:ignore="LockedOrientationActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
