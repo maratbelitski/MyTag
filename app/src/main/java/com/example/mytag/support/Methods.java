@@ -1,4 +1,4 @@
-package com.example.mytag;
+package com.example.mytag.support;
 import static com.example.mytag.NormalActivity.matrixSearch;
 import static com.example.mytag.NormalActivity.positionNewEmpty;
 import static com.example.mytag.NormalActivity.positionNewValue;
@@ -15,6 +15,8 @@ import static com.example.mytag.EasyActivity.countStepsEasy;
 import static com.example.mytag.EasyActivity.valuesTagArrayEasy;
 import static com.example.mytag.EasyActivity.valuesViewListEasy;
 
+
+import com.example.mytag.R;
 
 import java.util.List;
 

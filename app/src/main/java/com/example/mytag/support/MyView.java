@@ -1,4 +1,4 @@
-package com.example.mytag;
+package com.example.mytag.support;
 import android.widget.ImageView;
 import android.widget.TextView;
 

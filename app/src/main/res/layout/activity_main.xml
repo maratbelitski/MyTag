@@ -49,23 +49,23 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/custom_buttons"
             android:onClick="showRules"
-            android:padding="16dp"
-            android:text="@string/rules_button"
+            android:padding="@dimen/padding"
+            android:text="@string/button_rules"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="@dimen/size_text_button" />
 
         <Button
             android:id="@+id/b_start_game"
             android:layout_width="195dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
+            android:layout_margin="30dp"
             android:background="@drawable/custom_buttons_start"
             android:onClick="startGame"
-            android:padding="16dp"
-            android:text="@string/to_game_button"
+            android:padding="@dimen/padding"
+            android:text="@string/button_to_game"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="@dimen/size_text_button" />
 
 
 

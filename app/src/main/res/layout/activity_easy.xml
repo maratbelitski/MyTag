@@ -52,7 +52,7 @@
                     android:id="@+id/text_step2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/number1"
+                    android:text="@string/number0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/size_text_big" />
             </LinearLayout>
@@ -313,7 +313,7 @@
             android:background="@drawable/custom_buttons_start"
             android:onClick="shuffleTags"
             android:padding="16dp"
-            android:text="@string/shuffle_button"
+            android:text="@string/button_shuffle"
             android:textColor="@color/white"
             android:textSize="@dimen/size_text_button"
             tools:ignore="UsingOnClickInXml" />
@@ -328,7 +328,7 @@
             android:background="@drawable/custom_buttons_stop"
             android:onClick="finishGame"
             android:padding="16dp"
-            android:text="@string/stop_game_button"
+            android:text="@string/button_stop_game"
             android:textColor="@color/white"
             android:textSize="@dimen/size_text_button"
             tools:ignore="UsingOnClickInXml" />

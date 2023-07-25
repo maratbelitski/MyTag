@@ -1,16 +1,20 @@
 package com.example.mytag;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import com.example.mytag.support.ButtonsAnimation;
 
 
-public class StartActivity extends AppCompatActivity{
+public class StartActivity extends AppCompatActivity implements ButtonsAnimation {
 
     public String level = "";
     public String type = "";
@@ -23,19 +27,34 @@ public class StartActivity extends AppCompatActivity{
         Spinner spinner1 = findViewById(R.id.spinner_1);
         Spinner spinner2 = findViewById(R.id.spinner_2);
 
-        ArrayAdapter<CharSequence> adapterArray = ArrayAdapter.createFromResource(this, R.array.level, android.R.layout.simple_spinner_dropdown_item);
-        ArrayAdapter<CharSequence> adapterArray2 = ArrayAdapter.createFromResource(this, R.array.type, android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapterArray);
-        spinner1.setAdapter(adapterArray2);
+        Button buttonStart = findViewById(R.id.b_start_game);
+        Button buttonStop = findViewById(R.id.b_stop_game);
+
+        showButtonAnimation(buttonStart);
+        showButtonAnimation(buttonStop);
+
+
+
+
+        String[]levelArray ={"3x3","4x4"};
+        String[]typeArray ={"классика","в процессе"};
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                R.layout.spinner_layout, R.id.spinner_text, levelArray);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
+                R.layout.spinner_layout, R.id.spinner_text, typeArray);
+
+        spinner2.setAdapter(adapter);
+        spinner1.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             if(position==1){
                 image_title_game.setImageResource(R.drawable.image_normal);
-                level="normal";
+                level="4x4";
             }else {
                 image_title_game.setImageResource(R.drawable.image_easy);
-                level="easy";
+                level="3x3";
             }
             }
             @Override
@@ -56,12 +75,15 @@ public class StartActivity extends AppCompatActivity{
 
     public void startGame(View view) {
         Class<?> destination= MainActivity.class;
-        if(level.equals("normal")) {
+        if(level.equals("4x4")) {
            destination= NormalActivity.class;
-        }else if (level.equals("easy")){
+        }else if (level.equals("3x3")){
             destination= EasyActivity.class;
         }
         Intent intent = new Intent(this, destination);
         startActivity(intent);
+    }
+
+    public void finishGame(View view) {finish();
     }
 }

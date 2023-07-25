@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--    <b>жирный шрифт</b>-->
+<!--    <i>наклонный шрифт</i>-->
+<!--    <u>подчеркнутый шрифт</u>-->
+
 <resources>
     <string-array name="level">
-        <item>ЛЕГКИЙ</item>
-        <item>НОРМА</item>
+        <item>3x3</item>
+        <item>4x4</item>
     </string-array>
 
     <string-array name="type">

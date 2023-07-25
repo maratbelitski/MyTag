@@ -493,7 +493,7 @@
             android:background="@drawable/custom_buttons_start"
             android:onClick="shuffleTags"
             android:padding="16dp"
-            android:text="@string/shuffle_button"
+            android:text="@string/button_shuffle"
             android:textColor="@color/white"
             android:textSize="@dimen/size_text_button" />
 
@@ -507,7 +507,7 @@
             android:background="@drawable/custom_buttons_stop"
             android:onClick="finishGame"
             android:padding="16dp"
-            android:text="@string/stop_game_button"
+            android:text="@string/button_stop_game"
             android:textColor="@color/white"
             android:textSize="@dimen/size_text_button" />
     </LinearLayout>

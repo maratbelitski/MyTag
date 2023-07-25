@@ -6,12 +6,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mytag.support.ButtonsAnimation;
+import com.example.mytag.support.Methods;
+import com.example.mytag.support.MyView;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class NormalActivity extends AppCompatActivity implements Methods {
+public class NormalActivity extends AppCompatActivity implements Methods, ButtonsAnimation {
     public static int countSteps;
 
     public static String valueTextNow;
@@ -54,6 +59,8 @@ public class NormalActivity extends AppCompatActivity implements Methods {
         shuffleTags = findViewById(R.id.b_shuffle);
         text_step2 = findViewById(R.id.text_step2);
 
+        showButtonAnimation(stopGame);
+        showButtonAnimation(shuffleTags);
 
         valuesTagList = new ArrayList<>();
         valuesTagList.add("1");
@@ -92,7 +99,7 @@ public class NormalActivity extends AppCompatActivity implements Methods {
         valuesViewList.add(new MyView(text15 = findViewById(R.id.id_text15), image15 = findViewById(R.id.id_image15)));
         valuesViewList.add(new MyView(text16 = findViewById(R.id.id_text16), image16 = findViewById(R.id.id_image16)));
 
-
+        countSteps=0;
         Collections.shuffle(valuesTagList);
         setAllViewMatrix(valuesViewList, valuesTagList);
         valuesTagArray = listToArray(valuesTagList);

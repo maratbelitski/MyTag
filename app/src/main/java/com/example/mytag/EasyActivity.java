@@ -6,12 +6,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mytag.support.ButtonsAnimation;
+import com.example.mytag.support.Methods;
+import com.example.mytag.support.MyView;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class EasyActivity extends AppCompatActivity implements Methods {
+public class EasyActivity extends AppCompatActivity implements Methods, ButtonsAnimation {
     public static int countStepsEasy;
     public static String valueTextNowEasy;
     public static int positionNewEmptyEasy = -1;
@@ -48,6 +53,8 @@ public class EasyActivity extends AppCompatActivity implements Methods {
         shuffleTags = findViewById(R.id.b_shuffle);
         text_step2 = findViewById(R.id.text_step2);
 
+        showButtonAnimation(stopGame);
+        showButtonAnimation(shuffleTags);
 
         valuesTagListEasy = new ArrayList<>();
         valuesTagListEasy.add("1");
@@ -72,7 +79,7 @@ public class EasyActivity extends AppCompatActivity implements Methods {
         valuesViewListEasy.add(new MyView(text8 = findViewById(R.id.id_text8), image8 = findViewById(R.id.id_image8)));
         valuesViewListEasy.add(new MyView(text9 = findViewById(R.id.id_text9), image9 = findViewById(R.id.id_image9)));
 
-
+        countStepsEasy=0;
         Collections.shuffle(valuesTagListEasy);
         setAllViewMatrixEasy(valuesViewListEasy, valuesTagListEasy);
         valuesTagArrayEasy = listToArrayEasy(valuesTagListEasy);
@@ -97,8 +104,7 @@ public class EasyActivity extends AppCompatActivity implements Methods {
         countStepsEasy=0;
         text_step2.setText(String.valueOf(countStepsEasy));
     }
-    public void finishGame(View view) {
-        finish();
+    public void finishGame(View view) {finish();
     }
 
 

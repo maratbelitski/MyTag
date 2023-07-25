@@ -15,7 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="@dimen/padding"
         android:text="Выберите сложность и вид игры"
         android:textColor="@color/white"
         android:textSize="@dimen/size_text_big" />
@@ -35,14 +34,14 @@
 
         <Spinner
             android:id="@+id/spinner_1"
-            android:layout_width="140dp"
+            android:layout_width="145dp"
             android:layout_height="40dp"
-            android:dropDownWidth="wrap_content"
-            android:layout_margin="@dimen/padding"
-            android:background="@drawable/custom_buttons_stop"
             android:gravity="center"
+            android:layout_margin="@dimen/padding"
+            android:dropDownWidth="wrap_content"
+            android:background="@drawable/custom_buttons_stop"
             android:popupBackground="@color/black"
-            android:textAlignment="center"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/spinner_2"
@@ -50,13 +49,13 @@
 
         <Spinner
            android:id="@+id/spinner_2"
-            android:layout_width="140dp"
+            android:layout_width="145dp"
             android:layout_height="40dp"
-            android:textAlignment="center"
+            android:gravity="center"
             android:layout_margin="@dimen/padding"
             android:background="@drawable/custom_buttons_stop"
-            android:gravity="center"
             android:popupBackground="@color/black"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/spinner_1"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +70,22 @@
         android:background="@drawable/custom_buttons_start"
         android:onClick="startGame"
         android:padding="16dp"
-        android:text="@string/start_game_button"
+        android:text="@string/button_start_game"
         android:textColor="@color/white"
         android:textSize="@dimen/size_text_button" />
+
+    <Button
+        android:id="@+id/b_stop_game"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/padding"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/custom_buttons_stop"
+        android:onClick="finishGame"
+        android:padding="16dp"
+        android:text="@string/button_out_game"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_text_button"
+        tools:ignore="UsingOnClickInXml" />
 </LinearLayout>
