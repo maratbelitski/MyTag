@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding"
+    tools:context=".WinnerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/angry_squirrel" />
+
+    <TextView
+        android:id="@+id/text_winner1"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Вы завершили партию !"
+        android:textSize="@dimen/size_text_big"/>
+
+    <TextView
+        android:id="@+id/text_count_step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="50 ходов"
+        android:textSize="@dimen/size_text_big"/>
+
+    <TextView
+        android:id="@+id/b_text_squirrel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="Я рада за тебя! (нет)."
+        android:textSize="@dimen/size_text_normal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="(с)Angry Squirrel"
+        android:textSize="@dimen/size_text_normal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:layout_gravity="center"
+        android:text="ФАКТ О БЕЛКАХ"
+        android:textSize="@dimen/size_text_big"/>
+
+    <TextView
+        android:id="@+id/b_fact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/rules"
+        android:textSize="@dimen/size_text_normal" />
+
+    <Button
+        android:id="@+id/b_start_game"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding"
+        android:layout_gravity="center"
+        android:background="@drawable/custom_buttons_start"
+        android:onClick="startGame"
+        android:padding="16dp"
+        android:text="@string/button_to_game"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_text_button"
+        tools:ignore="UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/b_stop_game"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/padding"
+        android:background="@drawable/custom_buttons_stop"
+        android:onClick="finishGame"
+        android:padding="16dp"
+        android:text="@string/button_out_game"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_text_button"
+        tools:ignore="UsingOnClickInXml" />
+    </LinearLayout>
+
+</ScrollView>

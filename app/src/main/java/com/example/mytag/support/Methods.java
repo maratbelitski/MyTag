@@ -252,4 +252,43 @@ public interface Methods {
             }
         }
     }
+
+    default  String[][] shuffleTag(String[][] array) {
+        //метод правильной тасовки
+        String empty = " ";
+        String temp;
+        int count = 100;
+
+        while (count != 0) {
+            for (int i = 1; i < array.length - 1; i++) {
+                for (int j = 1; j < array[i].length - 1; j++) {
+                    if (empty.equals(array[i][j])) {
+                        int random = (int) (Math.random() * 4 + 1);
+                        if (!array[i][j - 1].equals("*") && random == 1) {
+                            temp = array[i][j - 1];
+                            array[i][j - 1] = array[i][j];
+                            array[i][j] = temp;
+
+                        } else if (!array[i][j + 1].equals("*") && random == 2) {
+                            temp = array[i][j + 1];
+                            array[i][j + 1] = array[i][j];
+                            array[i][j] = temp;
+
+                        } else if (!array[i - 1][j].equals("*") && random == 3) {
+                            temp = array[i - 1][j];
+                            array[i - 1][j] = array[i][j];
+                            array[i][j] = temp;
+
+                        } else if (!array[i + 1][j].equals("*") && random == 4) {
+                            temp = array[i + 1][j];
+                            array[i + 1][j] = array[i][j];
+                            array[i][j] = temp;
+                        }
+                    }
+                }
+            }
+            count--;
+        }
+        return array;
+    }
 }

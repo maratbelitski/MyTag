@@ -1,4 +1,5 @@
 package com.example.mytag;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,9 +25,16 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
     public static int positionNewValue = -1;
     public static List<String> valuesTagList;
     public static List<MyView> valuesViewList;
-    public static String[][] valuesTagArray;
 
     public static String[][] matrixWin = new String[][]{
+            {"*", "*", "*", "*", "*", "*"},
+            {"*", "1", "2", "3", "4", "*"},
+            {"*", "5", "6", "7", "8", "*"},
+            {"*", "9", "10", "11", "12", "*"},
+            {"*", "13", "14", "15", " ", "*"},
+            {"*", "*", "*", "*", "*", "*"}};
+
+    public static String[][] valuesTagArray = new String[][]{
             {"*", "*", "*", "*", "*", "*"},
             {"*", "1", "2", "3", "4", "*"},
             {"*", "5", "6", "7", "8", "*"},
@@ -62,24 +70,6 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
         showButtonAnimation(stopGame);
         showButtonAnimation(shuffleTags);
 
-        valuesTagList = new ArrayList<>();
-        valuesTagList.add("1");
-        valuesTagList.add("2");
-        valuesTagList.add("3");
-        valuesTagList.add("4");
-        valuesTagList.add("5");
-        valuesTagList.add("6");
-        valuesTagList.add("7");
-        valuesTagList.add("8");
-        valuesTagList.add("9");
-        valuesTagList.add("10");
-        valuesTagList.add("11");
-        valuesTagList.add("12");
-        valuesTagList.add("13");
-        valuesTagList.add("14");
-        valuesTagList.add("15");
-        valuesTagList.add(" ");
-
 
         valuesViewList = new ArrayList<>();
         valuesViewList.add(new MyView(text1 = findViewById(R.id.id_text1), image1 = findViewById(R.id.id_image1)));
@@ -99,10 +89,23 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
         valuesViewList.add(new MyView(text15 = findViewById(R.id.id_text15), image15 = findViewById(R.id.id_image15)));
         valuesViewList.add(new MyView(text16 = findViewById(R.id.id_text16), image16 = findViewById(R.id.id_image16)));
 
+
         countSteps=0;
-        Collections.shuffle(valuesTagList);
+        valuesTagArray=shuffleTag(valuesTagArray);
+
+        valuesTagList = new ArrayList<>();
+        for (int i = 0; i < valuesTagArray.length; i++) {
+            for (int j = 0; j <valuesTagArray[i].length ; j++) {
+                if (i == 0 || i == valuesTagArray.length - 1 || j == 0 || j == valuesTagArray.length - 1) {
+                   valuesTagArray[i][j] = "*";
+                    continue;
+                }
+               valuesTagList.add(valuesTagArray[i][j]) ;
+            }
+        }
+
         setAllViewMatrix(valuesViewList, valuesTagList);
-        valuesTagArray = listToArray(valuesTagList);
+
 
     }
 
@@ -113,19 +116,32 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
         text_step2.setText(String.valueOf(countSteps));
 
         if(Arrays.deepEquals(valuesTagArray,matrixWin)){
-            Toast.makeText(this, "YOU ARE WINNER !!!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, WinnerActivity.class);
+            intent.putExtra(WinnerActivity.COUNT, countSteps);
+            startActivity(intent);
         }
     }
 
     public void shuffleTags(View view) {
-        Collections.shuffle(valuesTagList);
+        valuesTagArray = shuffleTag(valuesTagArray);
+        valuesTagList = new ArrayList<>();
+        for (int i = 0; i < valuesTagArray.length; i++) {
+            for (int j = 0; j < valuesTagArray[i].length; j++) {
+                if (i == 0 || i == valuesTagArray.length - 1 || j == 0 || j == valuesTagArray.length - 1) {
+                    valuesTagArray[i][j] = "*";
+                    continue;
+                }
+                valuesTagList.add(valuesTagArray[i][j]);
+            }
+        }
+
         setAllViewMatrix(valuesViewList, valuesTagList);
-        valuesTagArray = listToArray(valuesTagList);
         countSteps=0;
         text_step2.setText(String.valueOf(countSteps));
     }
     public void finishGame(View view) {
-        finish();
+        Intent intent = new Intent(this, StartActivity.class);
+        startActivity(intent);
     }
 
 

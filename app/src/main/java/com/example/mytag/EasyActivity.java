@@ -1,10 +1,13 @@
 package com.example.mytag;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mytag.support.ButtonsAnimation;
@@ -23,13 +26,20 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     public static int positionNewValueEasy = -1;
     public static List<String> valuesTagListEasy;
     public static List<MyView> valuesViewListEasy;
-    public static String[][] valuesTagArrayEasy;
+
 
     public static String[][] matrixWinEasy = new String[][]{
             {"*", "*", "*", "*", "*"},
             {"*", "1", "2", "3", "*"},
             {"*", "4", "5", "6", "*"},
             {"*", "7", "8", " ", "*"},
+            {"*", "*", "*", "*", "*"}};
+
+    public static String[][] valuesTagArrayEasy = new String[][]{
+            {"*", "*", "*", "*", "*"},
+            {"*", "1", "2", "3", "*"},
+            {"*", "4", "5", "6", "*"},
+            {"*", "7", " ", "8", "*"},
             {"*", "*", "*", "*", "*"}};
     public static int[][] matrixSearchEasy = new int[][]{
             {0, 0, 0, 0, 0},
@@ -38,10 +48,9 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
             {0, 7, 8, 9, 0},
             {0, 0, 0, 0, 0}};
 
-    Button stopGame,shuffleTags;
+    Button stopGame, shuffleTags;
     ImageView image1, image2, image3, image4, image5, image6, image7, image8, image9;
-    TextView text1, text2, text3, text4, text5, text6, text7, text8, text9,text_step2;
-
+    TextView text1, text2, text3, text4, text5, text6, text7, text8, text9, text_step2;
 
 
     @Override
@@ -56,18 +65,6 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         showButtonAnimation(stopGame);
         showButtonAnimation(shuffleTags);
 
-        valuesTagListEasy = new ArrayList<>();
-        valuesTagListEasy.add("1");
-        valuesTagListEasy.add("2");
-        valuesTagListEasy.add("3");
-        valuesTagListEasy.add("4");
-        valuesTagListEasy.add("5");
-        valuesTagListEasy.add("6");
-        valuesTagListEasy.add("7");
-        valuesTagListEasy.add("8");
-        valuesTagListEasy.add(" ");
-
-
         valuesViewListEasy = new ArrayList<>();
         valuesViewListEasy.add(new MyView(text1 = findViewById(R.id.id_text1), image1 = findViewById(R.id.id_image1)));
         valuesViewListEasy.add(new MyView(text2 = findViewById(R.id.id_text2), image2 = findViewById(R.id.id_image2)));
@@ -79,11 +76,21 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         valuesViewListEasy.add(new MyView(text8 = findViewById(R.id.id_text8), image8 = findViewById(R.id.id_image8)));
         valuesViewListEasy.add(new MyView(text9 = findViewById(R.id.id_text9), image9 = findViewById(R.id.id_image9)));
 
-        countStepsEasy=0;
-        Collections.shuffle(valuesTagListEasy);
-        setAllViewMatrixEasy(valuesViewListEasy, valuesTagListEasy);
-        valuesTagArrayEasy = listToArrayEasy(valuesTagListEasy);
+        countStepsEasy = 0;
+        valuesTagArrayEasy = shuffleTag(valuesTagArrayEasy);
 
+        valuesTagListEasy = new ArrayList<>();
+        for (int i = 0; i < valuesTagArrayEasy.length; i++) {
+            for (int j = 0; j < valuesTagArrayEasy[i].length; j++) {
+                if (i == 0 || i == valuesTagArrayEasy.length - 1 || j == 0 || j == valuesTagArrayEasy.length - 1) {
+                    valuesTagArrayEasy[i][j] = "*";
+                    continue;
+                }
+                valuesTagListEasy.add(valuesTagArrayEasy[i][j]);
+            }
+        }
+
+        setAllViewMatrixEasy(valuesViewListEasy, valuesTagListEasy);
     }
 
     public void showMove2(View view) {
@@ -92,19 +99,34 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         ClickOnTagEasy();
         text_step2.setText(String.valueOf(countStepsEasy));
 
-        if(Arrays.deepEquals(valuesTagArrayEasy,matrixWinEasy)){
-            Toast.makeText(this, "YOU ARE WINNER !!!", Toast.LENGTH_LONG).show();
+        if (Arrays.deepEquals(valuesTagArrayEasy, matrixWinEasy)) {
+            Intent intent = new Intent(this, WinnerActivity.class);
+            intent.putExtra(WinnerActivity.COUNT, countStepsEasy);
+            startActivity(intent);
         }
     }
 
     public void shuffleTags(View view) {
-        Collections.shuffle(valuesTagListEasy);
+        valuesTagArrayEasy = shuffleTag(valuesTagArrayEasy);
+        valuesTagListEasy = new ArrayList<>();
+        for (int i = 0; i < valuesTagArrayEasy.length; i++) {
+            for (int j = 0; j < valuesTagArrayEasy[i].length; j++) {
+                if (i == 0 || i == valuesTagArrayEasy.length - 1 || j == 0 || j == valuesTagArrayEasy.length - 1) {
+                    valuesTagArrayEasy[i][j] = "*";
+                    continue;
+                }
+                valuesTagListEasy.add(valuesTagArrayEasy[i][j]);
+            }
+        }
         setAllViewMatrixEasy(valuesViewListEasy, valuesTagListEasy);
-        valuesTagArrayEasy = listToArrayEasy(valuesTagListEasy);
-        countStepsEasy=0;
+
+        countStepsEasy = 0;
         text_step2.setText(String.valueOf(countStepsEasy));
     }
-    public void finishGame(View view) {finish();
+
+    public void finishGame(View view) {
+        Intent intent = new Intent(this, StartActivity.class);
+        startActivity(intent);
     }
 
 

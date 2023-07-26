@@ -2,7 +2,7 @@
 <resources>
     <dimen name="padding">16dp</dimen>
     <dimen name="size_text_tag">35sp</dimen>
-    <dimen name="size_image_tag">85dp</dimen>
+    <dimen name="size_image_tag">80dp</dimen>
 
     <dimen name="width_button_main">225dp</dimen>
 

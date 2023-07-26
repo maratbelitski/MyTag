@@ -13,6 +13,9 @@ import android.widget.Spinner;
 
 import com.example.mytag.support.ButtonsAnimation;
 
+import java.util.Arrays;
+import java.util.List;
+
 
 public class StartActivity extends AppCompatActivity implements ButtonsAnimation {
 
@@ -34,15 +37,12 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
         showButtonAnimation(buttonStop);
 
 
-
-
-        String[]levelArray ={"3x3","4x4"};
-        String[]typeArray ={"классика","в процессе"};
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.spinner_layout, R.id.spinner_text, levelArray);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
-                R.layout.spinner_layout, R.id.spinner_text, typeArray);
+        List<String> types = Arrays.asList(getResources().getStringArray(R.array.type));
+        List<String> levels = Arrays.asList(getResources().getStringArray(R.array.level));
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                R.layout.spinner_layout, R.id.spinner_text, levels);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this,
+                R.layout.spinner_layout, R.id.spinner_text, types);
 
         spinner2.setAdapter(adapter);
         spinner1.setAdapter(adapter2);
@@ -84,6 +84,8 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
         startActivity(intent);
     }
 
-    public void finishGame(View view) {finish();
+    public void finishGame(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
