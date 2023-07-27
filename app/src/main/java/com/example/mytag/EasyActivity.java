@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +16,6 @@ import com.example.mytag.support.MyView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class EasyActivity extends AppCompatActivity implements Methods, ButtonsAnimation {
@@ -26,6 +25,7 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     public static int positionNewValueEasy = -1;
     public static List<String> valuesTagListEasy;
     public static List<MyView> valuesViewListEasy;
+    public static List<FrameLayout> valuesLayoutListEasy;
 
 
     public static String[][] matrixWinEasy = new String[][]{
@@ -51,7 +51,7 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     Button stopGame, shuffleTags;
     ImageView image1, image2, image3, image4, image5, image6, image7, image8, image9;
     TextView text1, text2, text3, text4, text5, text6, text7, text8, text9, text_step2;
-
+    FrameLayout layout1, layout2, layout3, layout4, layout5, layout6, layout7, layout8, layout9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +64,29 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
 
         showButtonAnimation(stopGame);
         showButtonAnimation(shuffleTags);
+
+        layout1 = findViewById(R.id.id_frameLayout1);
+        layout2 = findViewById(R.id.id_frameLayout2);
+        layout3 = findViewById(R.id.id_frameLayout3);
+        layout4 = findViewById(R.id.id_frameLayout4);
+        layout5 = findViewById(R.id.id_frameLayout5);
+        layout6 = findViewById(R.id.id_frameLayout6);
+        layout7 = findViewById(R.id.id_frameLayout7);
+        layout8 = findViewById(R.id.id_frameLayout8);
+        layout9 = findViewById(R.id.id_frameLayout9);
+
+
+        valuesLayoutListEasy = new ArrayList<>();
+        valuesLayoutListEasy.add(layout1 = findViewById(R.id.id_frameLayout1));
+        valuesLayoutListEasy.add(layout2 = findViewById(R.id.id_frameLayout2));
+        valuesLayoutListEasy.add(layout3 = findViewById(R.id.id_frameLayout3));
+        valuesLayoutListEasy.add(layout4 = findViewById(R.id.id_frameLayout4));
+        valuesLayoutListEasy.add(layout5 = findViewById(R.id.id_frameLayout5));
+        valuesLayoutListEasy.add(layout6 = findViewById(R.id.id_frameLayout6));
+        valuesLayoutListEasy.add(layout7 = findViewById(R.id.id_frameLayout7));
+        valuesLayoutListEasy.add(layout8 = findViewById(R.id.id_frameLayout8));
+        valuesLayoutListEasy.add(layout9 = findViewById(R.id.id_frameLayout9));
+
 
         valuesViewListEasy = new ArrayList<>();
         valuesViewListEasy.add(new MyView(text1 = findViewById(R.id.id_text1), image1 = findViewById(R.id.id_image1)));
@@ -79,19 +102,13 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         countStepsEasy = 0;
         valuesTagArrayEasy = shuffleTag(valuesTagArrayEasy);
 
-        valuesTagListEasy = new ArrayList<>();
-        for (int i = 0; i < valuesTagArrayEasy.length; i++) {
-            for (int j = 0; j < valuesTagArrayEasy[i].length; j++) {
-                if (i == 0 || i == valuesTagArrayEasy.length - 1 || j == 0 || j == valuesTagArrayEasy.length - 1) {
-                    valuesTagArrayEasy[i][j] = "*";
-                    continue;
-                }
-                valuesTagListEasy.add(valuesTagArrayEasy[i][j]);
-            }
-        }
+        valuesTagListEasy = arrayToList(valuesTagArrayEasy);
+
+        shuffleAnimation(valuesLayoutListEasy);
 
         setAllViewMatrixEasy(valuesViewListEasy, valuesTagListEasy);
     }
+
 
     public void showMove2(View view) {
         valueTextNowEasy = findValueTextNow(view);
@@ -107,17 +124,10 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     }
 
     public void shuffleTags(View view) {
+        shuffleAnimation(valuesLayoutListEasy);
+
         valuesTagArrayEasy = shuffleTag(valuesTagArrayEasy);
-        valuesTagListEasy = new ArrayList<>();
-        for (int i = 0; i < valuesTagArrayEasy.length; i++) {
-            for (int j = 0; j < valuesTagArrayEasy[i].length; j++) {
-                if (i == 0 || i == valuesTagArrayEasy.length - 1 || j == 0 || j == valuesTagArrayEasy.length - 1) {
-                    valuesTagArrayEasy[i][j] = "*";
-                    continue;
-                }
-                valuesTagListEasy.add(valuesTagArrayEasy[i][j]);
-            }
-        }
+        valuesTagListEasy = arrayToList(valuesTagArrayEasy);
         setAllViewMatrixEasy(valuesViewListEasy, valuesTagListEasy);
 
         countStepsEasy = 0;

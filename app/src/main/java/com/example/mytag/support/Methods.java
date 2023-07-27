@@ -18,6 +18,7 @@ import static com.example.mytag.EasyActivity.valuesViewListEasy;
 
 import com.example.mytag.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,38 +27,18 @@ import java.util.List;
  */
 public interface Methods {
 
-    default String[][] listToArray(List<String> list) {
-    int count=0;
-        String[][] matrix = new String[6][6];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (i == 0 || i == matrix.length - 1 || j == 0 || j == matrix.length - 1) {
-                    matrix[i][j] = "*";
+    default List<String> arrayToList(String[][] array) {
+       List<String> list= new ArrayList<>();
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (i == 0 || i == array.length - 1 || j == 0 || j == array.length - 1) {
+                    array[i][j] = "*";
+                    continue;
                 }
-                if (i > 0 && i < matrix.length - 1 && j > 0 && j < matrix.length - 1) {
-                    matrix[i][j] =list.get(count);
-                    count++;
-                }
+                list.add(array[i][j]);
             }
         }
-        return matrix;
-    }
-
-    default String[][] listToArrayEasy(List<String> list) {
-        int count=0;
-        String[][] matrix = new String[5][5];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (i == 0 || i == matrix.length - 1 || j == 0 || j == matrix.length - 1) {
-                    matrix[i][j] = "*";
-                }
-                if (i > 0 && i < matrix.length - 1 && j > 0 && j < matrix.length - 1) {
-                    matrix[i][j] =list.get(count);
-                    count++;
-                }
-            }
-        }
-        return matrix;
+        return list;
     }
 
 

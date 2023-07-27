@@ -15,7 +15,9 @@
         tools:targetApi="33">
         <activity
             android:name=".WinnerActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".NormalActivity"
             android:exported="false"
@@ -45,5 +47,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

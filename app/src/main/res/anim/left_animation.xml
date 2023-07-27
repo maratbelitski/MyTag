@@ -6,7 +6,6 @@
 
 
 
-<translate
-    android:toXDelta="100%" />
-
+    <translate
+        android:toXDelta="-100%" />
 </set>

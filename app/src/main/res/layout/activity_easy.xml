@@ -61,12 +61,10 @@
             android:id="@+id/gridLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_gravity="center"
-
             android:columnCount="3"
             android:rowCount="3"
-            tools:ignore="UsingOnClickInXml">
+            tools:ignore="RtlSymmetry,UsingOnClickInXml">
 
             <FrameLayout
                 android:id="@+id/id_frameLayout1"
@@ -83,7 +81,7 @@
 
                 <TextView
                     android:id="@+id/id_text1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="28dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
 
