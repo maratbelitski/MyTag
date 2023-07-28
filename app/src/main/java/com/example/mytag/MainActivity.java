@@ -2,10 +2,14 @@ package com.example.mytag;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.mytag.support.ButtonsAnimation;
 
@@ -18,9 +22,13 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
 
         Button buttonRules = findViewById(R.id.b_rules);
         Button buttonStartGame = findViewById(R.id.b_start_game);
+        ImageView imageMyTag = findViewById(R.id.image_mytag);
 
         showButtonAnimation(buttonRules);
         showButtonAnimation(buttonStartGame);
+
+        Animation turn = AnimationUtils.loadAnimation((Context) this, R.anim.turn_animation);
+        imageMyTag.startAnimation(turn);
     }
 
     public void startGame(View view) {

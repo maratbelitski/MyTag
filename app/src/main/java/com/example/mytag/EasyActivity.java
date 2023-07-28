@@ -19,29 +19,43 @@ import java.util.Arrays;
 import java.util.List;
 
 public class EasyActivity extends AppCompatActivity implements Methods, ButtonsAnimation {
-    public static int countStepsEasy;
-    public static String valueTextNowEasy;
-    public static int positionNewEmptyEasy = -1;
-    public static int positionNewValueEasy = -1;
-    public static List<String> valuesTagListEasy;
-    public static List<MyView> valuesViewListEasy;
-    public static List<FrameLayout> valuesLayoutListEasy;
+    public static int countSteps;
+    public static String valueTextNow;
+    public static int positionNewEmpty = -1;
+    public static int positionNewValue = -1;
+    public static List<String> tagListEasy;
+    public static List<MyView> viewListEasy;
+    public static List<FrameLayout> layoutList;
 
 
-    public static String[][] matrixWinEasy = new String[][]{
+    public static String[][] matrixWin = new String[][]{
             {"*", "*", "*", "*", "*"},
             {"*", "1", "2", "3", "*"},
             {"*", "4", "5", "6", "*"},
             {"*", "7", "8", " ", "*"},
             {"*", "*", "*", "*", "*"}};
 
-    public static String[][] valuesTagArrayEasy = new String[][]{
+    public static String[][] matrixWinSnakeEasy = new String[][]{
+            {"*", "*", "*", "*", "*"},
+            {"*", "1", "2", "3", "*"},
+            {"*", "6", "5", "4", "*"},
+            {"*", "7", "8", " ", "*"},
+            {"*", "*", "*", "*", "*"}};
+
+    public static String[][] valuesTagArray = new String[][]{
             {"*", "*", "*", "*", "*"},
             {"*", "1", "2", "3", "*"},
             {"*", "4", "5", "6", "*"},
             {"*", "7", " ", "8", "*"},
             {"*", "*", "*", "*", "*"}};
-    public static int[][] matrixSearchEasy = new int[][]{
+
+    public static String[][] valuesTagArraySnakeEasy = new String[][]{
+            {"*", "*", "*", "*", "*"},
+            {"*", "1", "2", "3", "*"},
+            {"*", "4", "5", "6", "*"},
+            {"*", "7", " ", "8", "*"},
+            {"*", "*", "*", "*", "*"}};
+    public static int[][] matrixSearch = new int[][]{
             {0, 0, 0, 0, 0},
             {0, 1, 2, 3, 0},
             {0, 4, 5, 6, 0},
@@ -76,62 +90,65 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         layout9 = findViewById(R.id.id_frameLayout9);
 
 
-        valuesLayoutListEasy = new ArrayList<>();
-        valuesLayoutListEasy.add(layout1 = findViewById(R.id.id_frameLayout1));
-        valuesLayoutListEasy.add(layout2 = findViewById(R.id.id_frameLayout2));
-        valuesLayoutListEasy.add(layout3 = findViewById(R.id.id_frameLayout3));
-        valuesLayoutListEasy.add(layout4 = findViewById(R.id.id_frameLayout4));
-        valuesLayoutListEasy.add(layout5 = findViewById(R.id.id_frameLayout5));
-        valuesLayoutListEasy.add(layout6 = findViewById(R.id.id_frameLayout6));
-        valuesLayoutListEasy.add(layout7 = findViewById(R.id.id_frameLayout7));
-        valuesLayoutListEasy.add(layout8 = findViewById(R.id.id_frameLayout8));
-        valuesLayoutListEasy.add(layout9 = findViewById(R.id.id_frameLayout9));
+        layoutList = new ArrayList<>();
+        layoutList.add(layout1 = findViewById(R.id.id_frameLayout1));
+        layoutList.add(layout2 = findViewById(R.id.id_frameLayout2));
+        layoutList.add(layout3 = findViewById(R.id.id_frameLayout3));
+        layoutList.add(layout4 = findViewById(R.id.id_frameLayout4));
+        layoutList.add(layout5 = findViewById(R.id.id_frameLayout5));
+        layoutList.add(layout6 = findViewById(R.id.id_frameLayout6));
+        layoutList.add(layout7 = findViewById(R.id.id_frameLayout7));
+        layoutList.add(layout8 = findViewById(R.id.id_frameLayout8));
+        layoutList.add(layout9 = findViewById(R.id.id_frameLayout9));
 
 
-        valuesViewListEasy = new ArrayList<>();
-        valuesViewListEasy.add(new MyView(text1 = findViewById(R.id.id_text1), image1 = findViewById(R.id.id_image1)));
-        valuesViewListEasy.add(new MyView(text2 = findViewById(R.id.id_text2), image2 = findViewById(R.id.id_image2)));
-        valuesViewListEasy.add(new MyView(text3 = findViewById(R.id.id_text3), image3 = findViewById(R.id.id_image3)));
-        valuesViewListEasy.add(new MyView(text4 = findViewById(R.id.id_text4), image4 = findViewById(R.id.id_image4)));
-        valuesViewListEasy.add(new MyView(text5 = findViewById(R.id.id_text5), image5 = findViewById(R.id.id_image5)));
-        valuesViewListEasy.add(new MyView(text6 = findViewById(R.id.id_text6), image6 = findViewById(R.id.id_image6)));
-        valuesViewListEasy.add(new MyView(text7 = findViewById(R.id.id_text7), image7 = findViewById(R.id.id_image7)));
-        valuesViewListEasy.add(new MyView(text8 = findViewById(R.id.id_text8), image8 = findViewById(R.id.id_image8)));
-        valuesViewListEasy.add(new MyView(text9 = findViewById(R.id.id_text9), image9 = findViewById(R.id.id_image9)));
+        viewListEasy = new ArrayList<>();
+        viewListEasy.add(new MyView(text1 = findViewById(R.id.id_text1), image1 = findViewById(R.id.id_image1)));
+        viewListEasy.add(new MyView(text2 = findViewById(R.id.id_text2), image2 = findViewById(R.id.id_image2)));
+        viewListEasy.add(new MyView(text3 = findViewById(R.id.id_text3), image3 = findViewById(R.id.id_image3)));
+        viewListEasy.add(new MyView(text4 = findViewById(R.id.id_text4), image4 = findViewById(R.id.id_image4)));
+        viewListEasy.add(new MyView(text5 = findViewById(R.id.id_text5), image5 = findViewById(R.id.id_image5)));
+        viewListEasy.add(new MyView(text6 = findViewById(R.id.id_text6), image6 = findViewById(R.id.id_image6)));
+        viewListEasy.add(new MyView(text7 = findViewById(R.id.id_text7), image7 = findViewById(R.id.id_image7)));
+        viewListEasy.add(new MyView(text8 = findViewById(R.id.id_text8), image8 = findViewById(R.id.id_image8)));
+        viewListEasy.add(new MyView(text9 = findViewById(R.id.id_text9), image9 = findViewById(R.id.id_image9)));
 
-        countStepsEasy = 0;
-        valuesTagArrayEasy = shuffleTag(valuesTagArrayEasy);
+        countSteps = 0;
+        valuesTagArray = shuffleTag(valuesTagArray);
 
-        valuesTagListEasy = arrayToList(valuesTagArrayEasy);
+        tagListEasy = arrayToList(valuesTagArray);
 
-        shuffleAnimation(valuesLayoutListEasy);
+        shuffleAnimation(layoutList);
 
-        setAllViewMatrixEasy(valuesViewListEasy, valuesTagListEasy);
+        setAllViewMatrix(viewListEasy, tagListEasy);
     }
 
 
     public void showMove2(View view) {
-        valueTextNowEasy = findValueTextNow(view);
+        String string = "easy";
 
-        ClickOnTagEasy();
-        text_step2.setText(String.valueOf(countStepsEasy));
+        valueTextNow = findValueTextNow(view);
 
-        if (Arrays.deepEquals(valuesTagArrayEasy, matrixWinEasy)) {
+        ClickOnTag(string);
+        text_step2.setText(String.valueOf(countSteps));
+
+        if (Arrays.deepEquals(valuesTagArray, matrixWin)) {
             Intent intent = new Intent(this, WinnerActivity.class);
-            intent.putExtra(WinnerActivity.COUNT, countStepsEasy);
+            intent.putExtra(WinnerActivity.COUNT, countSteps);
             startActivity(intent);
         }
     }
 
     public void shuffleTags(View view) {
-        shuffleAnimation(valuesLayoutListEasy);
+        shuffleAnimation(layoutList);
 
-        valuesTagArrayEasy = shuffleTag(valuesTagArrayEasy);
-        valuesTagListEasy = arrayToList(valuesTagArrayEasy);
-        setAllViewMatrixEasy(valuesViewListEasy, valuesTagListEasy);
+        valuesTagArray = shuffleTag(valuesTagArray);
 
-        countStepsEasy = 0;
-        text_step2.setText(String.valueOf(countStepsEasy));
+        tagListEasy = arrayToList(valuesTagArray);
+        setAllViewMatrix(viewListEasy, tagListEasy);
+
+        countSteps = 0;
+        text_step2.setText(String.valueOf(countSteps));
     }
 
     public void finishGame(View view) {
@@ -144,24 +161,24 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         ImageView view1 = findViewById(view.getId());
 
         if (view1 == image1) {
-            valueTextNowEasy = (String) text1.getText();
+            valueTextNow = (String) text1.getText();
         } else if (view1 == image2) {
-            valueTextNowEasy = (String) text2.getText();
+            valueTextNow = (String) text2.getText();
         } else if (view1 == image3) {
-            valueTextNowEasy = (String) text3.getText();
+            valueTextNow = (String) text3.getText();
         } else if (view1 == image4) {
-            valueTextNowEasy = (String) text4.getText();
+            valueTextNow = (String) text4.getText();
         } else if (view1 == image5) {
-            valueTextNowEasy = (String) text5.getText();
+            valueTextNow = (String) text5.getText();
         } else if (view1 == image6) {
-            valueTextNowEasy = (String) text6.getText();
+            valueTextNow = (String) text6.getText();
         } else if (view1 == image7) {
-            valueTextNowEasy = (String) text7.getText();
+            valueTextNow = (String) text7.getText();
         } else if (view1 == image8) {
-            valueTextNowEasy = (String) text8.getText();
+            valueTextNow = (String) text8.getText();
         } else if (view1 == image9) {
-            valueTextNowEasy = (String) text9.getText();
+            valueTextNow = (String) text9.getText();
         }
-        return valueTextNowEasy;
+        return valueTextNow;
     }
 }

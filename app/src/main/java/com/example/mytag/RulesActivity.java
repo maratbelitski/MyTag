@@ -2,6 +2,7 @@ package com.example.mytag;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ public class RulesActivity extends AppCompatActivity implements ButtonsAnimation
         showButtonAnimation(buttonOk);
     }
 public void getOK(View view){
-        finish();
+    Intent intent = new Intent(this, MainActivity.class);
+    startActivity(intent);
     }
 }

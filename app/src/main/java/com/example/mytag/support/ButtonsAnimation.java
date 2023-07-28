@@ -1,9 +1,7 @@
 package com.example.mytag.support;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
-import android.text.Layout;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -11,9 +9,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import static com.example.mytag.EasyActivity.valuesLayoutListEasy;
-
-import com.example.mytag.EasyActivity;
 import com.example.mytag.R;
 
 import java.util.List;
@@ -50,6 +45,9 @@ public interface ButtonsAnimation {
         Animation falling2 = AnimationUtils.loadAnimation((Context) this, R.anim.down_animation2);
         Animation falling3 = AnimationUtils.loadAnimation((Context) this, R.anim.down_animation3);
         Animation falling4 = AnimationUtils.loadAnimation((Context) this, R.anim.down_animation4);
+        Animation falling2easy = AnimationUtils.loadAnimation((Context) this, R.anim.down_animation2_easy);
+        Animation falling3easy = AnimationUtils.loadAnimation((Context) this, R.anim.down_animation3_easy);
+        Animation falling4easy = AnimationUtils.loadAnimation((Context) this, R.anim.down_animation4_easy);
 
 
         for (int i = 0; i < size; i++) {
@@ -71,16 +69,14 @@ public interface ButtonsAnimation {
         }else {
             for (int i = 0; i < size; i++) {
                 if (i == 0 || i == 3 || i == 6) {
-                    list.get(i).startAnimation(falling4);
+                    list.get(i).startAnimation(falling4easy);
                 } else if (i == 1 || i == 4 || i == 7) {
-                    list.get(i).startAnimation(falling3);
+                    list.get(i).startAnimation(falling3easy);
                 } else {
-                    list.get(i).startAnimation(falling2);
+                    list.get(i).startAnimation(falling2easy);
                 }
             }
         }
-
-
         for (int i = 0; i < size; i++) {
             list.get(i).setVisibility(View.VISIBLE);
         }

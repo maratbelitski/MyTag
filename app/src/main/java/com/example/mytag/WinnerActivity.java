@@ -26,7 +26,7 @@ public class WinnerActivity extends AppCompatActivity implements ButtonsAnimatio
         TextView fact = findViewById(R.id.b_fact);
         TextView textSquirrel= findViewById(R.id.b_text_squirrel);
         TextView textCountStep = findViewById(R.id.text_count_step);
-        textCountStep.setText("Ходов совершено: "+ countStep);
+        textCountStep.setText("Ходов сделано: " + countStep);
 
         Button start = findViewById(R.id.b_start_game);
         Button stop = findViewById(R.id.b_stop_game);

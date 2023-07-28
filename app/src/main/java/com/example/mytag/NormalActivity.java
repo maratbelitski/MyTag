@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mytag.support.ButtonsAnimation;
@@ -15,7 +15,6 @@ import com.example.mytag.support.MyView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class NormalActivity extends AppCompatActivity implements Methods, ButtonsAnimation {
@@ -24,9 +23,9 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
     public static String valueTextNow;
     public static int positionNewEmpty = -1;
     public static int positionNewValue = -1;
-    public static List<String> valuesTagList;
-    public static List<MyView> valuesViewList;
-    public static List<FrameLayout> valuesLayoutList;
+    public static List<String> tagList;
+    public static List<MyView> viewList;
+    public static List<FrameLayout> layoutList;
 
     public static String[][] matrixWin = new String[][]{
             {"*", "*", "*", "*", "*", "*"},
@@ -92,60 +91,60 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
         layout16 = findViewById(R.id.id_frameLayout16);
 
 
-        valuesLayoutList = new ArrayList<>();
-        valuesLayoutList.add(layout1 = findViewById(R.id.id_frameLayout1));
-        valuesLayoutList.add(layout2 = findViewById(R.id.id_frameLayout2));
-        valuesLayoutList.add(layout3 = findViewById(R.id.id_frameLayout3));
-        valuesLayoutList.add(layout4 = findViewById(R.id.id_frameLayout4));
-        valuesLayoutList.add(layout5 = findViewById(R.id.id_frameLayout5));
-        valuesLayoutList.add(layout6 = findViewById(R.id.id_frameLayout6));
-        valuesLayoutList.add(layout7 = findViewById(R.id.id_frameLayout7));
-        valuesLayoutList.add(layout8 = findViewById(R.id.id_frameLayout8));
-        valuesLayoutList.add(layout9 = findViewById(R.id.id_frameLayout9));
-        valuesLayoutList.add(layout10 = findViewById(R.id.id_frameLayout10));
-        valuesLayoutList.add(layout11 = findViewById(R.id.id_frameLayout11));
-        valuesLayoutList.add(layout12 = findViewById(R.id.id_frameLayout12));
-        valuesLayoutList.add(layout13 = findViewById(R.id.id_frameLayout13));
-        valuesLayoutList.add(layout14 = findViewById(R.id.id_frameLayout14));
-        valuesLayoutList.add(layout15 = findViewById(R.id.id_frameLayout15));
-        valuesLayoutList.add(layout16 = findViewById(R.id.id_frameLayout16));
+        layoutList = new ArrayList<>();
+        layoutList.add(layout1 = findViewById(R.id.id_frameLayout1));
+        layoutList.add(layout2 = findViewById(R.id.id_frameLayout2));
+        layoutList.add(layout3 = findViewById(R.id.id_frameLayout3));
+        layoutList.add(layout4 = findViewById(R.id.id_frameLayout4));
+        layoutList.add(layout5 = findViewById(R.id.id_frameLayout5));
+        layoutList.add(layout6 = findViewById(R.id.id_frameLayout6));
+        layoutList.add(layout7 = findViewById(R.id.id_frameLayout7));
+        layoutList.add(layout8 = findViewById(R.id.id_frameLayout8));
+        layoutList.add(layout9 = findViewById(R.id.id_frameLayout9));
+        layoutList.add(layout10 = findViewById(R.id.id_frameLayout10));
+        layoutList.add(layout11 = findViewById(R.id.id_frameLayout11));
+        layoutList.add(layout12 = findViewById(R.id.id_frameLayout12));
+        layoutList.add(layout13 = findViewById(R.id.id_frameLayout13));
+        layoutList.add(layout14 = findViewById(R.id.id_frameLayout14));
+        layoutList.add(layout15 = findViewById(R.id.id_frameLayout15));
+        layoutList.add(layout16 = findViewById(R.id.id_frameLayout16));
 
 
-        valuesViewList = new ArrayList<>();
-        valuesViewList.add(new MyView(text1 = findViewById(R.id.id_text1), image1 = findViewById(R.id.id_image1)));
-        valuesViewList.add(new MyView(text2 = findViewById(R.id.id_text2), image2 = findViewById(R.id.id_image2)));
-        valuesViewList.add(new MyView(text3 = findViewById(R.id.id_text3), image3 = findViewById(R.id.id_image3)));
-        valuesViewList.add(new MyView(text4 = findViewById(R.id.id_text4), image4 = findViewById(R.id.id_image4)));
-        valuesViewList.add(new MyView(text5 = findViewById(R.id.id_text5), image5 = findViewById(R.id.id_image5)));
-        valuesViewList.add(new MyView(text6 = findViewById(R.id.id_text6), image6 = findViewById(R.id.id_image6)));
-        valuesViewList.add(new MyView(text7 = findViewById(R.id.id_text7), image7 = findViewById(R.id.id_image7)));
-        valuesViewList.add(new MyView(text8 = findViewById(R.id.id_text8), image8 = findViewById(R.id.id_image8)));
-        valuesViewList.add(new MyView(text9 = findViewById(R.id.id_text9), image9 = findViewById(R.id.id_image9)));
-        valuesViewList.add(new MyView(text10 = findViewById(R.id.id_text10), image10 = findViewById(R.id.id_image10)));
-        valuesViewList.add(new MyView(text11 = findViewById(R.id.id_text11), image11 = findViewById(R.id.id_image11)));
-        valuesViewList.add(new MyView(text12 = findViewById(R.id.id_text12), image12 = findViewById(R.id.id_image12)));
-        valuesViewList.add(new MyView(text13 = findViewById(R.id.id_text13), image13 = findViewById(R.id.id_image13)));
-        valuesViewList.add(new MyView(text14 = findViewById(R.id.id_text14), image14 = findViewById(R.id.id_image14)));
-        valuesViewList.add(new MyView(text15 = findViewById(R.id.id_text15), image15 = findViewById(R.id.id_image15)));
-        valuesViewList.add(new MyView(text16 = findViewById(R.id.id_text16), image16 = findViewById(R.id.id_image16)));
+        viewList = new ArrayList<>();
+        viewList.add(new MyView(text1 = findViewById(R.id.id_text1), image1 = findViewById(R.id.id_image1)));
+        viewList.add(new MyView(text2 = findViewById(R.id.id_text2), image2 = findViewById(R.id.id_image2)));
+        viewList.add(new MyView(text3 = findViewById(R.id.id_text3), image3 = findViewById(R.id.id_image3)));
+        viewList.add(new MyView(text4 = findViewById(R.id.id_text4), image4 = findViewById(R.id.id_image4)));
+        viewList.add(new MyView(text5 = findViewById(R.id.id_text5), image5 = findViewById(R.id.id_image5)));
+        viewList.add(new MyView(text6 = findViewById(R.id.id_text6), image6 = findViewById(R.id.id_image6)));
+        viewList.add(new MyView(text7 = findViewById(R.id.id_text7), image7 = findViewById(R.id.id_image7)));
+        viewList.add(new MyView(text8 = findViewById(R.id.id_text8), image8 = findViewById(R.id.id_image8)));
+        viewList.add(new MyView(text9 = findViewById(R.id.id_text9), image9 = findViewById(R.id.id_image9)));
+        viewList.add(new MyView(text10 = findViewById(R.id.id_text10), image10 = findViewById(R.id.id_image10)));
+        viewList.add(new MyView(text11 = findViewById(R.id.id_text11), image11 = findViewById(R.id.id_image11)));
+        viewList.add(new MyView(text12 = findViewById(R.id.id_text12), image12 = findViewById(R.id.id_image12)));
+        viewList.add(new MyView(text13 = findViewById(R.id.id_text13), image13 = findViewById(R.id.id_image13)));
+        viewList.add(new MyView(text14 = findViewById(R.id.id_text14), image14 = findViewById(R.id.id_image14)));
+        viewList.add(new MyView(text15 = findViewById(R.id.id_text15), image15 = findViewById(R.id.id_image15)));
+        viewList.add(new MyView(text16 = findViewById(R.id.id_text16), image16 = findViewById(R.id.id_image16)));
 
 
         countSteps=0;
         valuesTagArray=shuffleTag(valuesTagArray);
 
-        valuesTagList = arrayToList(valuesTagArray);
+        tagList = arrayToList(valuesTagArray);
 
-        shuffleAnimation(valuesLayoutList);
+        shuffleAnimation(layoutList);
 
-        setAllViewMatrix(valuesViewList, valuesTagList);
-
-
+        setAllViewMatrix(viewList, tagList);
     }
 
     public void showMove2(View view) {
+        String string = "normal";
+
         valueTextNow = findValueTextNow(view);
 
-        ClickOnTag();
+        ClickOnTag(string);
         text_step2.setText(String.valueOf(countSteps));
 
         if(Arrays.deepEquals(valuesTagArray,matrixWin)){
@@ -157,12 +156,12 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
 
     public void shuffleTags(View view) {
 
-       shuffleAnimation(valuesLayoutList);
+       shuffleAnimation(layoutList);
 
         valuesTagArray = shuffleTag(valuesTagArray);
-        valuesTagList = arrayToList(valuesTagArray);
+        tagList = arrayToList(valuesTagArray);
 
-        setAllViewMatrix(valuesViewList, valuesTagList);
+        setAllViewMatrix(viewList, tagList);
         countSteps=0;
         text_step2.setText(String.valueOf(countSteps));
     }

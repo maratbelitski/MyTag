@@ -29,8 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="@dimen/padding"
-            android:text="Размер поля:"
-            android:textSize="@dimen/size_text_big" />
+            android:text="На сложность игры влияет размер игрового поля. Есть несколько видов:"
+            android:textSize="@dimen/size_text_normal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="@dimen/padding"
-            android:text="В зависимости от типа игры имеет значение направление движение при сборе :"
+            android:text="В зависимости от типа игры, имеет значение направление движения при сборе :"
             android:textSize="@dimen/size_text_normal" />
 
         <TextView
