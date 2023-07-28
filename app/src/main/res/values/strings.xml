@@ -29,6 +29,7 @@
     <string name="button_shuffle">Мешать</string>
 
     <string name="text_classic">"КЛАССИКА"</string>
+    <string name="text_snake">"ЗМЕЙКА"</string>
     <string name="text_3x3">"3x3"</string>
     <string name="text_4x4">"4x4"</string>
 

@@ -46,7 +46,7 @@ public interface Methods {
         int countSteps;
 
         if (string.equals("easy")) {
-            listView = EasyActivity.viewListEasy;
+            listView = EasyActivity.viewList;
             valueTextNow = EasyActivity.valueTextNow;
             countSteps = EasyActivity.countSteps;
         } else {
@@ -73,18 +73,6 @@ public interface Methods {
 
         }
     }
-
-//    default void changePositionViewEasy(int positionNewEmptyEasy, int positionNewValueEasy) {
-//        if ((positionNewValueEasy != -1) || (positionNewEmptyEasy != -1)) {
-//            viewListEasy.get(positionNewEmptyEasy - 1).getMyImageView().setImageResource(R.drawable.logo_transparante);
-//            viewListEasy.get(positionNewEmptyEasy - 1).getMyTextView().setText(R.string.numberEmpty);
-//
-//            viewListEasy.get(positionNewValueEasy - 1).getMyImageView().setImageResource(R.drawable.logo_hex);
-//            viewListEasy.get(positionNewValueEasy - 1).getMyTextView().setText(valueTextNowEasy);
-//
-//            countStepsEasy++;
-//        }
-//    }
 
     default void findPosition(String string) {
         String[][] array;
@@ -167,78 +155,6 @@ public interface Methods {
         }
     }
 
-//    default void findPositionEasy() {
-//        String temp;
-//        boolean exit = false;
-//        String empty = " ";
-//
-//        for (int i = 1; i < matrixSearchEasy.length - 1 && !exit; i++) {
-//            for (int j = 1; j < matrixSearchEasy[i].length - 1 && !exit; j++) {
-//
-//                if (valueTextNowEasy.equals(valuesTagArrayEasy[i][j])) {
-//
-//                    if (empty.equals(valuesTagArrayEasy[i][j - 1])) {
-//                        temp = valuesTagArrayEasy[i][j - 1];
-//                        valuesTagArrayEasy[i][j - 1] = valueTextNowEasy;
-//                        valuesTagArrayEasy[i][j] = temp;
-//
-//                        positionNewEmptyEasy = matrixSearchEasy[i][j];
-//                        positionNewValueEasy = matrixSearchEasy[i][j - 1];
-//                        exit = true;
-//
-//                    } else if (empty.equals(valuesTagArrayEasy[i][j + 1])) {
-//                        temp = valuesTagArrayEasy[i][j + 1];
-//                        valuesTagArrayEasy[i][j + 1] = valueTextNowEasy;
-//                        valuesTagArrayEasy[i][j] = temp;
-//
-//                        positionNewEmptyEasy = matrixSearchEasy[i][j];
-//                        positionNewValueEasy = matrixSearchEasy[i][j + 1];
-//                        exit = true;
-//
-//                    } else if (empty.equals(valuesTagArrayEasy[i - 1][j])) {
-//                        temp = valuesTagArrayEasy[i - 1][j];
-//                        valuesTagArrayEasy[i - 1][j] = valueTextNowEasy;
-//                        valuesTagArrayEasy[i][j] = temp;
-//
-//                        positionNewEmptyEasy = matrixSearchEasy[i][j];
-//                        positionNewValueEasy = matrixSearchEasy[i - 1][j];
-//                        exit = true;
-//
-//                    } else {
-//                        temp = valuesTagArrayEasy[i + 1][j];
-//                        valuesTagArrayEasy[i + 1][j] = valueTextNowEasy;
-//                        valuesTagArrayEasy[i][j] = temp;
-//
-//                        positionNewEmptyEasy = matrixSearchEasy[i][j];
-//                        positionNewValueEasy = matrixSearchEasy[i + 1][j];
-//                        exit = true;
-//                    }
-//                }
-//            }
-//        }
-//    }
-
-//    default void ClickOnTag() {
-//        boolean exit = false;
-//        String empty = " ";
-//
-//        for (int i = 1; i < valuesTagArray.length - 1 && !exit; i++) {
-//            for (int j = 1; j < valuesTagArray[i].length - 1 && !exit; j++) {
-//
-//                if (valueTextNow.equals(valuesTagArray[i][j])) {
-//                    if (empty.equals(valuesTagArray[i][j - 1])
-//                            || empty.equals(valuesTagArray[i][j + 1])
-//                            || empty.equals(valuesTagArray[i - 1][j])
-//                            || empty.equals(valuesTagArray[i + 1][j])) {
-//
-//                        findPosition();
-//                        changePositionView(positionNewEmpty, positionNewValue);
-//                        exit = true;
-//                    }
-//                }
-//            }
-//        }
-//    }
 
     default void ClickOnTag(String string) {
         String[][] array;
@@ -249,13 +165,9 @@ public interface Methods {
         if (string.equals("easy")) {
             array = EasyActivity.valuesTagArray;
             valueTextNow = EasyActivity.valueTextNow;
-//            positionNewValue = EasyActivity.positionNewValue;
-//            positionNewEmpty = EasyActivity.positionNewEmpty;
         } else {
             array = NormalActivity.valuesTagArray;
             valueTextNow = NormalActivity.valueTextNow;
-//            positionNewValue = NormalActivity.positionNewValue;
-//            positionNewEmpty = NormalActivity.positionNewEmpty;
         }
 
         boolean exit = false;

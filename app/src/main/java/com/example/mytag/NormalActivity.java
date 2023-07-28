@@ -12,14 +12,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mytag.support.ButtonsAnimation;
 import com.example.mytag.support.Methods;
 import com.example.mytag.support.MyView;
+import com.example.mytag.support.Tags;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class NormalActivity extends AppCompatActivity implements Methods, ButtonsAnimation {
+    public static final String TYPE_GAME = "typeGame";
+    public static String typeGame;
     public static int countSteps;
-
     public static String valueTextNow;
     public static int positionNewEmpty = -1;
     public static int positionNewValue = -1;
@@ -27,28 +29,13 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
     public static List<MyView> viewList;
     public static List<FrameLayout> layoutList;
 
-    public static String[][] matrixWin = new String[][]{
-            {"*", "*", "*", "*", "*", "*"},
-            {"*", "1", "2", "3", "4", "*"},
-            {"*", "5", "6", "7", "8", "*"},
-            {"*", "9", "10", "11", "12", "*"},
-            {"*", "13", "14", "15", " ", "*"},
-            {"*", "*", "*", "*", "*", "*"}};
+    public static String[][] matrixWin = Tags.matrixWinNormal;
 
-    public static String[][] valuesTagArray = new String[][]{
-            {"*", "*", "*", "*", "*", "*"},
-            {"*", "1", "2", "3", "4", "*"},
-            {"*", "5", "6", "7", "8", "*"},
-            {"*", "9", "10", "11", "12", "*"},
-            {"*", "13", "14", "15", " ", "*"},
-            {"*", "*", "*", "*", "*", "*"}};
-    public static int[][] matrixSearch = new int[][]{
-            {0, 0, 0, 0, 0, 0},
-            {0, 1, 2, 3, 4, 0},
-            {0, 5, 6, 7, 8, 0},
-            {0, 9, 10, 11, 12, 0},
-            {0, 13, 14, 15, 16, 0},
-            {0, 0, 0, 0, 0, 0}};
+    public static String[][] matrixWinSnake = Tags.getMatrixWinSnakeNormal;
+    public static String[][] valuesTagArray = Tags.valuesTagArrayNormal;
+
+    public static String[][] valuesTagArraySnake = Tags.valuesTagArraySnakeNormal;
+    public static int[][] matrixSearch = Tags.matrixSearch;
 
     Button stopGame,shuffleTags;
 
@@ -64,6 +51,8 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_normal);
+
+        typeGame = (String) getIntent().getExtras().get(TYPE_GAME);
 
         stopGame = findViewById(R.id.b_stop_game);
         shuffleTags = findViewById(R.id.b_shuffle);
@@ -129,25 +118,34 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
         viewList.add(new MyView(text16 = findViewById(R.id.id_text16), image16 = findViewById(R.id.id_image16)));
 
 
-        countSteps=0;
-        valuesTagArray=shuffleTag(valuesTagArray);
+        if(typeGame.equals("classic")){
+            valuesTagArray = shuffleTag(valuesTagArray);
+        }else {
+            valuesTagArray = shuffleTag(valuesTagArraySnake);
+        }
 
         tagList = arrayToList(valuesTagArray);
-
         shuffleAnimation(layoutList);
-
         setAllViewMatrix(viewList, tagList);
+        countSteps=0;
     }
 
     public void showMove2(View view) {
         String string = "normal";
+        String[][] matrix;
+
+        if(typeGame.equals("classic")){
+            matrix=matrixWin;
+        }else {
+            matrix=matrixWinSnake;
+        }
 
         valueTextNow = findValueTextNow(view);
 
         ClickOnTag(string);
         text_step2.setText(String.valueOf(countSteps));
 
-        if(Arrays.deepEquals(valuesTagArray,matrixWin)){
+        if(Arrays.deepEquals(valuesTagArray,matrix)){
             Intent intent = new Intent(this, WinnerActivity.class);
             intent.putExtra(WinnerActivity.COUNT, countSteps);
             startActivity(intent);

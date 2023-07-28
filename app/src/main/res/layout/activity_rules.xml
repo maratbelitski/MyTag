@@ -79,6 +79,19 @@
             android:layout_height="300dp"
             android:src="@drawable/image_classic" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/padding"
+            android:text="@string/text_snake"
+            android:textSize="@dimen/size_text_big" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/image_snake" />
+
     <Button
         android:id="@+id/b_ok"
         android:layout_width="195dp"

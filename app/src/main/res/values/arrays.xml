@@ -12,7 +12,7 @@
 
     <string-array name="type">
         <item>классика</item>
-        <item>в процессе</item>
+        <item>змейка</item>
     </string-array>
 
     <string-array name="text_angry_squirrel">
