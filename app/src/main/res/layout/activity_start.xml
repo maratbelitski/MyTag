@@ -11,13 +11,15 @@
     android:scrollbars="none"
     tools:context=".StartActivity">
 
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:gravity="center"-->
-<!--        android:text="Выберите сложность и вид игры"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="@dimen/size_text_big" />-->
+    <TextView
+        android:id="@+id/t_type_game"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_classic"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_buttons_start"
+        android:textSize="@dimen/size_text_normal" />
 
     <ImageView
         android:id="@+id/image_title_game"

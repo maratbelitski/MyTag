@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.mytag.support.ButtonsAnimation;
 
@@ -24,6 +25,13 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
     public String type = "";
 
     @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        StartActivity.this.finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
@@ -35,27 +43,27 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
         Button buttonStart = findViewById(R.id.b_start_game);
         Button buttonStop = findViewById(R.id.b_stop_game);
 
+        TextView typeGame = findViewById(R.id.t_type_game);
+
         showButtonAnimation(buttonStart);
         showButtonAnimation(buttonStop);
 
-
         List<String> types = Arrays.asList(getResources().getStringArray(R.array.type));
         List<String> levels = Arrays.asList(getResources().getStringArray(R.array.level));
+
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 R.layout.spinner_layout, R.id.spinner_text, levels);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this,
                 R.layout.spinner_layout, R.id.spinner_text, types);
-
         spinner2.setAdapter(adapter);
         spinner1.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                   // image_title_game.setImageResource(R.drawable.image_normal);
                     level = "3x3";
                 } else {
-                    //image_title_game.setImageResource(R.drawable.image_easy);
                     level = "4x4";
                 }
             }
@@ -71,9 +79,11 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
                 if (position == 0) {
                     image_title_game.setImageResource(R.drawable.image_classic);
                     type = "classic";
+                    typeGame.setText(R.string.text_classic);
                 } else {
                     image_title_game.setImageResource(R.drawable.image_snake);
                     type = "snake";
+                    typeGame.setText(R.string.text_snake);
                 }
             }
 
@@ -90,7 +100,7 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
         if (level.equals("4x4")) {
             if (type.equals("classic")) {
                 intent.putExtra(NormalActivity.TYPE_GAME, "classic");
-            }else {
+            } else {
                 intent.putExtra(NormalActivity.TYPE_GAME, "snake");
             }
             destination = NormalActivity.class;
@@ -98,17 +108,19 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
         } else if (level.equals("3x3")) {
             if (type.equals("snake")) {
                 intent.putExtra(EasyActivity.TYPE_GAME, "snake");
-            }else {
+            } else {
                 intent.putExtra(EasyActivity.TYPE_GAME, "classic");
             }
             destination = EasyActivity.class;
         }
-        intent.setClass(this,destination);
+        intent.setClass(this, destination);
         startActivity(intent);
+        StartActivity.this.finish();
     }
 
     public void finishGame(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        StartActivity.this.finish();
     }
 }

@@ -18,8 +18,18 @@ import com.example.mytag.support.Tags;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class EasyActivity extends AppCompatActivity implements Methods, ButtonsAnimation {
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, StartActivity.class);
+        startActivity(intent);
+        EasyActivity.this.finish();
+    }
     public static final String TYPE_GAME ="typeGame";
     public static String typeGame;
     public static int countSteps;
@@ -27,6 +37,9 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     public static int positionNewEmpty = -1;
     public static int positionNewValue = -1;
     public static List<String> tagList;
+
+
+
     public static List<MyView> viewList;
     public static List<FrameLayout> layoutList;
 
@@ -34,12 +47,12 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     public static String[][] matrixWinSnake = Tags.matrixWinSnakeEasy;
     public static String[][] valuesTagArray = Tags.valuesTagArrayEasy;
 
-    public static String[][] valuesTagArraySnake = Tags.valuesTagArraySnakeEasy;
-    public static int[][] matrixSearch = Tags.matrixSearch;
+    public static String[][] arraySnake = Tags.valuesTagArraySnakeEasy;
+    public static int[][] matrixSearch = Tags.matrixSearchEasy;
 
     Button stopGame, shuffleTags;
     ImageView image1, image2, image3, image4, image5, image6, image7, image8, image9;
-    TextView text1, text2, text3, text4, text5, text6, text7, text8, text9, text_step2;
+    TextView text1, text2, text3, text4, text5, text6, text7, text8, text9, text_step2,textTypeGame;
     FrameLayout layout1, layout2, layout3, layout4, layout5, layout6, layout7, layout8, layout9;
 
     @Override
@@ -52,6 +65,8 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         stopGame = findViewById(R.id.b_stop_game);
         shuffleTags = findViewById(R.id.b_shuffle);
         text_step2 = findViewById(R.id.text_step2);
+
+        textTypeGame = findViewById(R.id.t_type_game);
 
         showButtonAnimation(stopGame);
         showButtonAnimation(shuffleTags);
@@ -92,11 +107,12 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
 
         if(typeGame.equals("classic")){
             valuesTagArray = shuffleTag(valuesTagArray);
+            textTypeGame.setText(R.string.text_classic);
         }else {
-            valuesTagArray = shuffleTag(valuesTagArraySnake);
+            valuesTagArray = shuffleTag(arraySnake);
+            textTypeGame.setText(R.string.text_snake);
         }
 
-        valuesTagArray = shuffleTag(valuesTagArray);
         tagList = arrayToList(valuesTagArray);
         shuffleAnimation(layoutList);
         setAllViewMatrix(viewList, tagList);
@@ -104,7 +120,7 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     }
 
 
-    public void showMove2(View view) {
+    public void showMove2(View view){
         String string = "easy";
         String[][] matrix;
 
@@ -119,10 +135,19 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         ClickOnTag(string);
         text_step2.setText(String.valueOf(countSteps));
 
+
         if (Arrays.deepEquals(valuesTagArray, matrix)) {
+            //помогает отработать метод с задержкой
+            ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+            //нужно вернуть в исходное значение
+            valuesTagArray=Tags.valuesTagArrayEasy;
+
+            winnerAnimation(layoutList);
+
             Intent intent = new Intent(this, WinnerActivity.class);
             intent.putExtra(WinnerActivity.COUNT, countSteps);
-            startActivity(intent);
+
+            executorService.schedule(() -> startActivity(intent), 1500, TimeUnit.MILLISECONDS);
         }
     }
 
@@ -141,6 +166,7 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     public void finishGame(View view) {
         Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);
+        EasyActivity.this.finish();
     }
 
 

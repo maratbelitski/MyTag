@@ -18,6 +18,15 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/t_type_game"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_classic"
+            android:textColor="@color/white"
+            android:background="@drawable/custom_buttons_start"
+            android:textSize="@dimen/size_text_normal" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,7 +39,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:padding="@dimen/padding"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +89,7 @@
 
                 <TextView
                     android:id="@+id/id_text1"
-                    android:layout_width="28dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
 

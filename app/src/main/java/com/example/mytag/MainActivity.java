@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
     public void startGame(View view) {
     Intent intent = new Intent(this, StartActivity.class);
     startActivity(intent);
+    MainActivity.this.finish();
     }
 
     public void showRules(View view) {

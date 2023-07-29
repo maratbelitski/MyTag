@@ -14,5 +14,8 @@
 <!--        <item name="android:textColorSecondary">@color/white</item>-->
 <!--        <item name="android:colorBackground">@color/black</item>-->
 
+        <!--для отключения стандартного сплашскрина-->
+        <item name="android:windowIsTranslucent">true</item>
+
     </style>
 </resources>

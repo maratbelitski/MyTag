@@ -22,5 +22,6 @@ public class RulesActivity extends AppCompatActivity implements ButtonsAnimation
 public void getOK(View view){
     Intent intent = new Intent(this, MainActivity.class);
     startActivity(intent);
+    RulesActivity.this.finish();
     }
 }

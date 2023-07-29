@@ -81,4 +81,14 @@ public interface ButtonsAnimation {
             list.get(i).setVisibility(View.VISIBLE);
         }
     }
+
+    default void winnerAnimation(List<FrameLayout> list) {
+
+        int size = list.size();
+        Animation shake = AnimationUtils.loadAnimation((Context) this, R.anim.shake_animation);
+        for (int i = 0; i < size; i++) {
+            list.get(i).startAnimation(shake);
+        }
+    }
+
 }

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="1000"
-    android:fillAfter="false">
+    android:duration="500"
+    android:fillAfter="false"
+    android:startOffset="1200">
 
 
 
 <translate
-    android:toXDelta="100%" />
-
+    android:toXDelta="0"
+    android:fromXDelta="-200%"/>
 </set>

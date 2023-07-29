@@ -13,6 +13,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class WinnerActivity extends AppCompatActivity implements ButtonsAnimation {
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, StartActivity.class);
+        startActivity(intent);
+        WinnerActivity.this.finish();
+    }
     public static final String COUNT = "countStep";
 
     @SuppressLint("SetTextI18n")
@@ -35,10 +41,10 @@ public class WinnerActivity extends AppCompatActivity implements ButtonsAnimatio
         showButtonAnimation(stop);
 
         List<String> listTextSquirrel = Arrays.asList(getResources().getStringArray(R.array.text_angry_squirrel));
-        textSquirrel.setText(listTextSquirrel.get((int) (Math.random() * 9 + 0)));
+        textSquirrel.setText(listTextSquirrel.get((int) (Math.random() * 10 + 0)));
 
         List<String> listFacts = Arrays.asList(getResources().getStringArray(R.array.facts_about_squirrel));
-        fact.setText(listFacts.get((int) (Math.random() * 19 + 0)));
+        fact.setText(listFacts.get((int) (Math.random() * 20 + 0)));
 
 
     }
@@ -46,10 +52,12 @@ public class WinnerActivity extends AppCompatActivity implements ButtonsAnimatio
     public void startGame(View view) {
         Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);
+        WinnerActivity.this.finish();
     }
 
     public void finishGame(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        WinnerActivity.this.finish();
     }
 }
