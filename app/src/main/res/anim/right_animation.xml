@@ -5,8 +5,6 @@
     android:fillAfter="false"
     android:startOffset="1200">
 
-
-
 <translate
     android:toXDelta="0"
     android:fromXDelta="-200%"/>

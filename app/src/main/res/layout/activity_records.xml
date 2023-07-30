@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".RecordsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/squirrel_book" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding"
+            android:layout_gravity="center"
+            android:text="@string/text_fact_about"
+            android:textSize="@dimen/size_text_big"/>
+
+        <TextView
+            android:id="@+id/t_noFacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding"
+            android:layout_gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"/>
+
+        <TextView
+            android:id="@+id/t_fact1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/t_fact4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/t_fact9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/t_fact14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/t_fact19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/t_fact20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+            android:gravity="center"
+            android:text="@string/text_no_fact"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/b_ok"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:background="@drawable/custom_buttons"
+            android:onClick="getOK"
+            android:padding="@dimen/padding"
+            android:text="@string/button_ok"
+            android:textSize="@dimen/size_text_button"
+            tools:ignore="UsingOnClickInXml" />
+
+    </LinearLayout>
+</ScrollView>

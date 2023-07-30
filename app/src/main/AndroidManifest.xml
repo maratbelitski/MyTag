@@ -14,10 +14,13 @@
         tools:ignore="LockedOrientationActivity"
         tools:targetApi="33">
         <activity
+            android:name=".RecordsActivity"
+            android:exported="false" />
+        <activity
             android:name=".support.SplashActivity"
             android:exported="true"
-            android:theme="@style/NoActionBar"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,6 +51,6 @@
             android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
-
     </application>
+
 </manifest>

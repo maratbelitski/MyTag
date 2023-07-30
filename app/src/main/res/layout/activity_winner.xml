@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40sp"
         android:layout_gravity="center"
-        android:text="ФАКТ О БЕЛКАХ"
+        android:text="ФАКТЫ О БЕЛКАХ"
         android:textSize="@dimen/size_text_big"/>
 
     <TextView

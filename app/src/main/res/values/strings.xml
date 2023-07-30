@@ -27,11 +27,14 @@
     <string name="button_start_game">Старт</string>
     <string name="button_stop_game">Закончить</string>
     <string name="button_shuffle">Мешать</string>
+    <string name="button_records">Факты</string>
 
     <string name="text_classic">"КЛАССИКА"</string>
     <string name="text_snake">"ЗМЕЙКА"</string>
     <string name="text_3x3">"3x3"</string>
     <string name="text_4x4">"4x4"</string>
+    <string name="text_no_fact">Факты еще не открыты Вами.\nПобеждайте и открывате сведения!</string>
+    <string name="text_fact_about">ФАКТЫ О БЕЛКАХ</string>
 
 
     <string name="rules">ПРАВИЛА ИГРЫ \"ПЯТНАШКИ\":
