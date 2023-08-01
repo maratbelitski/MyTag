@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
     }
 
     public void showRecords(View view) {
-        Intent intent = new Intent(this,RecordsActivity.class);
+        Intent intent = new Intent(this,AdvanceActivity.class);
         startActivity(intent);
     }
 }

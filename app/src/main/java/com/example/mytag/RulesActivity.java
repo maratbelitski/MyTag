@@ -10,7 +10,12 @@ import android.widget.Button;
 import com.example.mytag.support.ButtonsAnimation;
 
 public class RulesActivity extends AppCompatActivity implements ButtonsAnimation {
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        RulesActivity.this.finish();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

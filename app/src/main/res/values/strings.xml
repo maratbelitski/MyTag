@@ -20,6 +20,11 @@
     <string name="number15">15</string>
     <string name="numberEmpty"> </string>
 
+    <string name="tab_records">Рекорды</string>
+    <string name="tab_facts">Факты</string>
+
+    <string name="toolbar_advance">MyTag. Достижения</string>
+
     <string name="button_rules">Правила</string>
     <string name="button_ok">Понятно</string>
     <string name="button_to_game">Играть</string>
@@ -27,7 +32,7 @@
     <string name="button_start_game">Старт</string>
     <string name="button_stop_game">Закончить</string>
     <string name="button_shuffle">Мешать</string>
-    <string name="button_records">Факты</string>
+    <string name="button_records">Достижения</string>
 
     <string name="text_classic">"КЛАССИКА"</string>
     <string name="text_snake">"ЗМЕЙКА"</string>
@@ -40,10 +45,12 @@
     <string name="rules">ПРАВИЛА ИГРЫ \"ПЯТНАШКИ\":
 \n\nПеремещая костяшки по полю, добейтесь упорядочивания их по номерам, желательно сделав,
 \nкак можно меньше перемещений.
-\n\nПри завершении партии, вам будет назван интересный факт о белках!
+\n\nПри завершении партий с размерами полей 4х4, Вам будет назван интересный факт о белках!
+\nВы сможете открыть 10 занимательных фактов за прохождение типа игры ЗМЕЙКА
+и 10 фактов за прохождение типа игры КЛАССИКА!
+\nЕсли вы заканчиваете партрию размерами 3х3, то вредная белочка Вам ничего не скажет - не обижайтесь на нее!
 \nВыигрывайте и узнавайте больше занимательныз фактов о зверьках!
 \n\nИгровое поле будет представлено с рандомно расположенными костяшками. Ваша задача, перемещениями фигур
 \nдобиться результата показанного ниже.
 </string>
-
 </resources>

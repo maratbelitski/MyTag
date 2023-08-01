@@ -16,18 +16,36 @@
         android:orientation="vertical">
 
 
-
     <ImageView
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_gravity="center"
         android:src="@drawable/angry_squirrel" />
 
+        <FrameLayout
+            android:id="@+id/l_answer_squirrel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/padding_middle"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/b_text_squirrel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Я рада за тебя! (нет)."
+                android:textColor="@color/black"
+                android:textSize="@dimen/size_text_normal"/>
+        </FrameLayout>
+
     <TextView
         android:id="@+id/text_winner1"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding"
         android:layout_gravity="center"
         android:text="Вы завершили партию !"
         android:textSize="@dimen/size_text_big"/>
@@ -40,21 +58,6 @@
         android:text="50 ходов"
         android:textSize="@dimen/size_text_big"/>
 
-    <TextView
-        android:id="@+id/b_text_squirrel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:text="Я рада за тебя! (нет)."
-        android:textSize="@dimen/size_text_normal"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:text="(с)Angry Squirrel"
-        android:textSize="@dimen/size_text_normal"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -64,15 +67,28 @@
         android:text="ФАКТЫ О БЕЛКАХ"
         android:textSize="@dimen/size_text_big"/>
 
-    <TextView
-        android:id="@+id/b_fact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/rules"
-        android:textSize="@dimen/size_text_normal" />
+        <TextView
+            android:id="@+id/t_fact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/padding"
+            android:text="@string/rules"
+            android:textSize="@dimen/size_text_normal"
+            android:visibility="gone"/>
 
-    <Button
+        <TextView
+            android:id="@+id/t_angry_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/padding"
+            android:text="Слишком легко... \nЗлая Белка Вам ничего не скажет!"
+            android:textSize="@dimen/size_text_big"
+            android:visibility="gone"
+            />
+
+        <Button
         android:id="@+id/b_start_game"
         android:layout_width="195dp"
         android:layout_height="wrap_content"

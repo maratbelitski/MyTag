@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="padding">16dp</dimen>
+    <dimen name="padding_middle">8dp</dimen>
     <dimen name="size_text_tag">35sp</dimen>
     <dimen name="size_image_tag">80dp</dimen>
 

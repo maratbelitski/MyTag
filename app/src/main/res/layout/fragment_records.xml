@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".RecordsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/squirrel_cup" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="40sp"
+        android:layout_gravity="center"
+        android:text="Ваши лучшие результаты:"
+        android:textSize="@dimen/size_text_big"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:padding="@dimen/padding"
+            android:text="ПОЛЕ"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:padding="@dimen/padding"
+            android:layout_gravity="center"
+            android:text="ИГРА"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:padding="@dimen/padding"
+            android:layout_gravity="center"
+            android:text="ХОДЫ"
+            android:textSize="@dimen/size_text_big" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:text="@string/text_3x3"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:text="@string/text_classic"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:id="@+id/step3x3_classic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/numberEmpty"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:text="@string/text_4x4"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:text="@string/text_classic"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:id="@+id/step4x4_classic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:text="@string/numberEmpty"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:text="@string/text_3x3"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:text="@string/text_snake"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:id="@+id/step3x3_snake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:text="@string/numberEmpty"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:text="@string/text_4x4"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:text="@string/text_snake"
+            android:textSize="@dimen/size_text_big" />
+
+        <TextView
+            android:id="@+id/step4x4_snake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/numberEmpty"
+            android:textSize="@dimen/size_text_big" />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/b_ok"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:background="@drawable/custom_buttons"
+        android:onClick="getOK"
+        android:padding="@dimen/padding"
+        android:text="@string/button_ok"
+        android:textSize="@dimen/size_text_button"
+        tools:ignore="UsingOnClickInXml" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

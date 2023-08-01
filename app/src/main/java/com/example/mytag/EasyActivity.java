@@ -145,7 +145,9 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
             winnerAnimation(layoutList);
 
             Intent intent = new Intent(this, WinnerActivity.class);
-            intent.putExtra(WinnerActivity.COUNT, countSteps);
+            intent.putExtra(WinnerActivity.getCOUNT(), countSteps);
+            intent.putExtra(WinnerActivity.getLevelGame(), string);
+            intent.putExtra(WinnerActivity.getTypeGame(), typeGame);
 
             executorService.schedule(() -> startActivity(intent), 1500, TimeUnit.MILLISECONDS);
         }
