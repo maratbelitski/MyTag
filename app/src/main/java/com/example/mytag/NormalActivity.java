@@ -39,11 +39,13 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
     public static List<FrameLayout> layoutList;
 
     public static String[][] matrixWin = Tags.matrixWinNormal;
-
     public static String[][] matrixWinSnake = Tags.matrixWinSnakeNormal;
-    public static String[][] valuesTagArray = Tags.valuesTagArrayNormal;
 
+
+    public static String[][] valuesTagArrayNormal = Tags.getValuesTagArrayNormal();
     public static String[][] arraySnake = Tags.valuesTagArraySnakeNormal;
+
+
     public static int[][] matrixSearch = Tags.matrixSearchNormal;
 
     Button stopGame,shuffleTags;
@@ -130,14 +132,14 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
 
 
         if(typeGame.equals("classic")){
-            valuesTagArray = shuffleTag(valuesTagArray);
+            valuesTagArrayNormal = shuffleTag(valuesTagArrayNormal);
             textTypeGame.setText(R.string.text_classic);
         }else {
-            valuesTagArray = shuffleTag(arraySnake);
+            valuesTagArrayNormal = shuffleTag(arraySnake);
             textTypeGame.setText(R.string.text_snake);
         }
 
-        tagList = arrayToList(valuesTagArray);
+        tagList = arrayToList(valuesTagArrayNormal);
         shuffleAnimation(layoutList);
         setAllViewMatrix(viewList, tagList);
         countSteps=0;
@@ -158,11 +160,11 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
         ClickOnTag(string);
         text_step2.setText(String.valueOf(countSteps));
 
-        if(Arrays.deepEquals(valuesTagArray,matrix)){
+        if(Arrays.deepEquals(valuesTagArrayNormal,matrix)){
             //помогает отработать метод с задержкой
             ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
             //нужно вернуть в исходное значение
-            valuesTagArray=Tags.valuesTagArrayEasy;
+            valuesTagArrayNormal =Tags.getValuesTagArrayNormal();
 
             winnerAnimation(layoutList);
 
@@ -179,8 +181,8 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
 
        shuffleAnimation(layoutList);
 
-        valuesTagArray = shuffleTag(valuesTagArray);
-        tagList = arrayToList(valuesTagArray);
+        valuesTagArrayNormal = shuffleTag(valuesTagArrayNormal);
+        tagList = arrayToList(valuesTagArrayNormal);
 
         setAllViewMatrix(viewList, tagList);
         countSteps=0;

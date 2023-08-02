@@ -1,15 +1,12 @@
 package com.example.mytag;
 import static com.example.mytag.WinnerActivity.getNumberFact;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,12 +15,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.example.mytag.support.ButtonsAnimation;
-
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
+
 
 public class FactsFragment extends Fragment implements ButtonsAnimation,View.OnClickListener {
 
@@ -37,13 +33,16 @@ public class FactsFragment extends Fragment implements ButtonsAnimation,View.OnC
         //с фрагментами работает метод onClick  для кнопок
         //нужно имплементить  View.OnClickListener и использовать setOnClickListener(this);
         View view = inflater.inflate(R.layout.fragment_facts, container, false);
+
+        //лист с фактами для замены при смене локализации
+        List<String> listFacts = Arrays.asList(getResources().getStringArray(R.array.facts_about_squirrel));
+
+        noFacts = view.findViewById(R.id.t_noFacts);
         Button ok = view.findViewById(R.id.b_ok);
         ok.setOnClickListener(this);
         showButtonAnimation(view.findViewById(R.id.b_ok));
 
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(getNumberFact(), Context.MODE_PRIVATE);
-
-        noFacts = view.findViewById(R.id.t_noFacts);
 
         List<TextView> listTextView = new ArrayList<>();
         listTextView.add(fact1 = view.findViewById(R.id.t_fact1));
@@ -89,10 +88,11 @@ public class FactsFragment extends Fragment implements ButtonsAnimation,View.OnC
         listNumbersFacts.add("number_fact18");
         listNumbersFacts.add("number_fact19");
 
-        //возвращаем факт если он был доступен при выигрыше
+        //возвращаем для проверки факт если он был доступен при выигрыше
         for (int i = 0; i < listNumbersFacts.size(); i++) {
             if (sharedPreferences.contains(listNumbersFacts.get(i))) {
-                listTextView.get(i).setText(sharedPreferences.getString(listNumbersFacts.get(i), ""));
+                //заполняем из коллекции, а не из бызы, в зависимости от локали
+                listTextView.get(i).setText(listFacts.get(i));
                 listTextView.get(i).setVisibility(View.VISIBLE);
                 noFacts.setVisibility(View.GONE);
             }
@@ -102,8 +102,6 @@ public class FactsFragment extends Fragment implements ButtonsAnimation,View.OnC
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this.getActivity(), MainActivity.class);
-        startActivity(intent);
         this.getActivity().finish();
     }
 

@@ -1,6 +1,7 @@
 package com.example.mytag;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.os.LocaleListCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mytag.support.ButtonsAnimation;
 
@@ -28,7 +30,7 @@ public class WinnerActivity extends AppCompatActivity implements ButtonsAnimatio
     private static int countStep,random;
     private static String typeGame;
     private static String levelGame;
-
+    FrameLayout layoutAnswerSquirrel;
     TextView fact, textSquirrel, textCountStep,angryAnswer;
 
     @SuppressLint("SetTextI18n")
@@ -52,11 +54,11 @@ public class WinnerActivity extends AppCompatActivity implements ButtonsAnimatio
         editor2.apply();
 
         fact = findViewById(R.id.t_fact);
-        FrameLayout layoutAnswerSquirrel = findViewById(R.id.l_answer_squirrel);
+        layoutAnswerSquirrel = findViewById(R.id.l_answer_squirrel);
         angryAnswer = findViewById(R.id.t_angry_answer);
         textSquirrel = findViewById(R.id.b_text_squirrel);
         textCountStep = findViewById(R.id.text_count_step);
-        textCountStep.setText("Ходов сделано: " + countStep);
+        textCountStep.setText(getResources().getString(R.string.text_steps_winner) + " " + countStep);
 
         Button start = findViewById(R.id.b_start_game);
         Button stop = findViewById(R.id.b_stop_game);
@@ -64,36 +66,7 @@ public class WinnerActivity extends AppCompatActivity implements ButtonsAnimatio
         showButtonAnimation(start);
         showButtonAnimation(stop);
 
-
-        if (levelGame.equals("easy")){
-            fact.setVisibility(View.GONE);
-            layoutAnswerSquirrel.setVisibility(View.VISIBLE);
-            textSquirrel.setVisibility(View.VISIBLE);
-            angryAnswer.setVisibility(View.VISIBLE);
-
-            List<String> listTextSquirrel = Arrays.asList(getResources().getStringArray(R.array.text_angry_squirrel));
-            textSquirrel.setText(listTextSquirrel.get((int) (Math.random() * 10 + 0)));
-        }else if(levelGame.equals("normal")){
-            fact.setVisibility(View.VISIBLE);
-            layoutAnswerSquirrel.setVisibility(View.GONE);
-            textSquirrel.setVisibility(View.GONE);
-            angryAnswer.setVisibility(View.GONE);
-
-            List<String> listFacts = Arrays.asList(getResources().getStringArray(R.array.facts_about_squirrel));
-            //создаем нужный сшаред
-            SharedPreferences sharedPreferences = getSharedPreferences(NUMBER_FACT, Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            if (typeGame.equals("classic")){
-                random = (int) (Math.random() * 10 + 0);
-            }else {
-                random = (int) (Math.random() * 10 + 10);
-            }
-            fact.setText(listFacts.get(random));
-
-            //так появляется каждый раз новая переменная для сохранения
-            editor.putString(NUMBER_FACT + random, listFacts.get(random));
-            editor.apply();
-        }
+        makeFacts();
     }
 
     public void startGame(View view) {
@@ -134,4 +107,37 @@ public class WinnerActivity extends AppCompatActivity implements ButtonsAnimatio
     public static String getLastGame() {
         return LAST_GAME;
     }
+
+    public void makeFacts(){
+        if (levelGame.equals("easy")){
+            fact.setVisibility(View.GONE);
+            layoutAnswerSquirrel.setVisibility(View.VISIBLE);
+            textSquirrel.setVisibility(View.VISIBLE);
+            angryAnswer.setVisibility(View.VISIBLE);
+
+            List<String> listTextSquirrel = Arrays.asList(getResources().getStringArray(R.array.text_angry_squirrel));
+            textSquirrel.setText(listTextSquirrel.get((int) (Math.random() * 10 + 0)));
+        }else if(levelGame.equals("normal")){
+            fact.setVisibility(View.VISIBLE);
+            layoutAnswerSquirrel.setVisibility(View.GONE);
+            textSquirrel.setVisibility(View.GONE);
+            angryAnswer.setVisibility(View.GONE);
+
+            List<String> listFacts = Arrays.asList(getResources().getStringArray(R.array.facts_about_squirrel));
+            //создаем нужный сшаред
+            SharedPreferences sharedPreferences = getSharedPreferences(NUMBER_FACT, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            if (typeGame.equals("classic")){
+                random = (int) (Math.random() * 10 + 0);
+            }else {
+                random = (int) (Math.random() * 10 + 10);
+            }
+            fact.setText(listFacts.get(random));
+
+            //так появляется каждый раз новая переменная для сохранения
+            editor.putString(NUMBER_FACT + random, listFacts.get(random));
+            editor.apply();
+        }
+    }
+
 }

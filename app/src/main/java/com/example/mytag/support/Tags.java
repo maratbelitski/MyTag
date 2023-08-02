@@ -37,13 +37,13 @@ public class Tags {
 
 
 
-    public static String[][] valuesTagArrayEasy = new String[][]{
+   private static final String[][] valuesTagArrayEasy = new String[][]{
             {"*", "*", "*", "*", "*"},
             {"*", "1", "2", "3", "*"},
             {"*", "4", "5", "6", "*"},
             {"*", "7", "8", " ", "*"},
             {"*", "*", "*", "*", "*"}};
-    public static String[][] valuesTagArrayNormal = new String[][]{
+    private static final String[][] valuesTagArrayNormal = new String[][]{
             {"*", "*", "*", "*", "*", "*"},
             {"*", "1", "2", "3", "4", "*"},
             {"*", "5", "6", "7", "8", "*"},
@@ -79,4 +79,12 @@ public class Tags {
             {0, 9, 10, 11, 12, 0},
             {0, 13, 14, 15, 16, 0},
             {0, 0, 0, 0, 0, 0}};
+
+    public static String[][] getValuesTagArrayNormal() {
+        return valuesTagArrayNormal;
+    }
+
+    public static String[][] getValuesTagArrayEasy() {
+        return valuesTagArrayEasy;
+    }
 }

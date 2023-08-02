@@ -13,9 +13,7 @@
         android:theme="@style/NoActionBar"
         tools:ignore="LockedOrientationActivity"
         tools:targetApi="33">
-        <activity
-            android:name=".AdvanceActivity"
-            android:exported="false" />
+
         <activity
             android:name=".support.SplashActivity"
             android:exported="true"
@@ -48,6 +46,14 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".support.InfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AdvanceActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
     </application>

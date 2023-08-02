@@ -14,6 +14,10 @@ import android.widget.TextView;
 import com.example.mytag.MainActivity;
 import com.example.mytag.R;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
@@ -28,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        //создаем сплашскрин
+       // создаем сплашскрин
         Intent intent = new Intent(this, MainActivity.class);
         Thread thread = new Thread() {
 

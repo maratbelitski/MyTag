@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.core.os.LocaleListCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -21,6 +23,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mytag.support.ButtonsAnimation;
 
@@ -77,8 +80,9 @@ public class RecordsFragment extends Fragment implements ButtonsAnimation, View.
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this.getActivity(), MainActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this.getActivity(), MainActivity.class);
+//        startActivity(intent);
+//        this.getActivity().finish();
         this.getActivity().finish();
     }
 

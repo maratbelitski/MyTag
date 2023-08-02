@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_records">Рекорды</string>
+    <string name="tab_facts">Факты</string>
+
+    <string name="toolbar_advance">MyTag. Достижения</string>
+
+    <string name="spinner_default">По умолчанию</string>
+    <string name="spinner_ru">Русский</string>
+    <string name="spinner_en">Английский</string>
+
+    <string name="button_rules">Правила</string>
+    <string name="button_ok">Понятно</string>
+    <string name="button_to_game">Играть</string>
+    <string name="button_out_game">Выйти</string>
+    <string name="button_start_game">Старт</string>
+    <string name="button_stop_game">Закончить</string>
+    <string name="button_shuffle">Мешать</string>
+    <string name="button_records">Достижения</string>
+    <string name="button_info">Инфо</string>
+    <string name="button_rate_app">Оцените !</string>
+
+    <string name="text_info_title">ИНФОРМАЦИЯ</string>
+    <string name="text_snake">"ЗМЕЙКА"</string>
+    <string name="text_classic">"КЛАССИКА"</string>
+    <string name="text_your_records">Лучшие результаты:</string>
+    <string name="text_game">ИГРА</string>
+    <string name="text_level">ПОЛЕ</string>
+    <string name="text_move">ХОДЫ</string>
+    <string name="text_your_move">Ваши ходы: </string>
+    <string name="text_steps_winner">Ходов сделано: </string>
+    <string name="text_end_game">Вы завершили партию !</string>
+    <string name="text_fact_end">ФАКТЫ О БЕЛКАХ</string>
+    <string name="text_its_easy">Слишком легко… \nЗлая Белка Вам ничего не скажет!</string>
+    <string name="text_3x3">"3x3"</string>
+    <string name="text_4x4">"4x4"</string>
+    <string name="text_no_fact">Факты еще не открыты Вами.\nПобеждайте и открывайте сведения!</string>
+    <string name="text_rules2">В зависимости от типа игры, имеет значение направление движения при сборе:</string>
+    <string name="text_fact_about">ФАКТЫ О БЕЛКАХ</string>
+    <string name="text_info">Приложение <b>MyTag</b>  является информационно - развлекательным проектом.
+\nЗдесь Вы потренеруете свой ум и узнаете много интересных фактов о забавных зверьках - белках!
+\n\nВерсия приложения: 1.0
+\nДата: 08.2023
+\nРазработчик: Belitski Marat
+\nemail: belitski.dev@gmail.com</string>
+
+    <string name="rules">ПРАВИЛА ИГРЫ \"ПЯТНАШКИ\":
+\n\nПеремещая костяшки по полю, добейтесь упорядочивания их по номерам, желательно сделав,
+\nкак можно меньше перемещений.
+\n\nПри завершении партий с размерами полей 4х4, Вам будет назван интересный факт о белках!
+\nВы сможете открыть 10 занимательных фактов за прохождение типа игры ЗМЕЙКА
+и 10 фактов за прохождение типа игры КЛАССИКА!
+\nЕсли вы заканчиваете партрию размерами 3х3, то вредная белочка Вам ничего не скажет - не обижайтесь на нее!
+\nВыигрывайте и узнавайте больше занимательных фактов о зверьках!
+\n\nИгровое поле будет представлено с рандомно расположенными костяшками. Ваша задача, перемещениями фигур
+\nдобиться результата показанного ниже.
+\nНа сложность игры влияет размер игрового поля.
+\nЕсть несколько видов:
+</string>
+</resources>

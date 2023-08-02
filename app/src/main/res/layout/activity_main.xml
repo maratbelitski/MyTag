@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -29,22 +30,50 @@
                 android:layout_gravity="center"
                 android:src="@drawable/logo_mytag" />
 
-            <TextView
-                android:id="@+id/tv_name_game"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/app_name"
-                android:textColor="@color/white"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_name_game"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="0dp" />
+
+                <Spinner
+                    android:id="@+id/s_spinner"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custom_buttons_info"
+                    android:dropDownWidth="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:padding="3dp"
+                    android:popupBackground="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_name_game"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            
 
             <Button
                 android:id="@+id/b_rules"
                 android:layout_width="195dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/custom_buttons"
                 android:onClick="showRules"
                 android:padding="@dimen/padding"
@@ -63,6 +92,20 @@
                 android:onClick="showRecords"
                 android:padding="@dimen/padding"
                 android:text="@string/button_records"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_text_button"
+                tools:ignore="UsingOnClickInXml" />
+
+            <Button
+                android:id="@+id/b_info"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_buttons_info"
+                android:onClick="showInfo"
+                android:padding="@dimen/padding"
+                android:text="@string/button_info"
                 android:textColor="@color/white"
                 android:textSize="@dimen/size_text_button"
                 tools:ignore="UsingOnClickInXml" />

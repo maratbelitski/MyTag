@@ -25,12 +25,12 @@ public class AdvanceActivity extends AppCompatActivity implements TabLayoutMedia
    private String typeGame = "1";
     private String levelGame = "1";
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        AdvanceActivity.this.finish();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+//        AdvanceActivity.this.finish();
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

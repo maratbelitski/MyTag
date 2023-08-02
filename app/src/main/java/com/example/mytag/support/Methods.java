@@ -84,13 +84,13 @@ public interface Methods {
 
         if (string.equals("easy")) {
             valueTextNow = EasyActivity.valueTextNow;
-            array = EasyActivity.valuesTagArray;
+            array = EasyActivity.valuesTagArrayEasy;
             arrayMatrix = EasyActivity.matrixSearch;
             positionNewValue = EasyActivity.positionNewValue;
             positionNewEmpty = EasyActivity.positionNewEmpty;
         } else {
             valueTextNow = NormalActivity.valueTextNow;
-            array = NormalActivity.valuesTagArray;
+            array = NormalActivity.valuesTagArrayNormal;
             arrayMatrix = NormalActivity.matrixSearch;
             positionNewValue = NormalActivity.positionNewValue;
             positionNewEmpty = NormalActivity.positionNewEmpty;
@@ -163,10 +163,10 @@ public interface Methods {
         String valueTextNow;
 
         if (string.equals("easy")) {
-            array = EasyActivity.valuesTagArray;
+            array = EasyActivity.valuesTagArrayEasy;
             valueTextNow = EasyActivity.valueTextNow;
         } else {
-            array = NormalActivity.valuesTagArray;
+            array = NormalActivity.valuesTagArrayNormal;
             valueTextNow = NormalActivity.valueTextNow;
         }
 

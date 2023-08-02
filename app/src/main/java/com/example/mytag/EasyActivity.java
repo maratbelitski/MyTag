@@ -45,7 +45,7 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
 
     public static String[][] matrixWin = Tags.matrixWinEasy;
     public static String[][] matrixWinSnake = Tags.matrixWinSnakeEasy;
-    public static String[][] valuesTagArray = Tags.valuesTagArrayEasy;
+    public static String[][] valuesTagArrayEasy = Tags.getValuesTagArrayEasy();
 
     public static String[][] arraySnake = Tags.valuesTagArraySnakeEasy;
     public static int[][] matrixSearch = Tags.matrixSearchEasy;
@@ -106,14 +106,14 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         viewList.add(new MyView(text9 = findViewById(R.id.id_text9), image9 = findViewById(R.id.id_image9)));
 
         if(typeGame.equals("classic")){
-            valuesTagArray = shuffleTag(valuesTagArray);
+            valuesTagArrayEasy = shuffleTag(valuesTagArrayEasy);
             textTypeGame.setText(R.string.text_classic);
         }else {
-            valuesTagArray = shuffleTag(arraySnake);
+            valuesTagArrayEasy = shuffleTag(arraySnake);
             textTypeGame.setText(R.string.text_snake);
         }
 
-        tagList = arrayToList(valuesTagArray);
+        tagList = arrayToList(valuesTagArrayEasy);
         shuffleAnimation(layoutList);
         setAllViewMatrix(viewList, tagList);
         countSteps = 0;
@@ -136,11 +136,11 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         text_step2.setText(String.valueOf(countSteps));
 
 
-        if (Arrays.deepEquals(valuesTagArray, matrix)) {
+        if (Arrays.deepEquals(valuesTagArrayEasy, matrix)) {
             //помогает отработать метод с задержкой
             ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
             //нужно вернуть в исходное значение
-            valuesTagArray=Tags.valuesTagArrayEasy;
+            valuesTagArrayEasy =Tags.getValuesTagArrayEasy();
 
             winnerAnimation(layoutList);
 
@@ -156,9 +156,9 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     public void shuffleTags(View view) {
         shuffleAnimation(layoutList);
 
-        valuesTagArray = shuffleTag(valuesTagArray);
+        valuesTagArrayEasy = shuffleTag(valuesTagArrayEasy);
 
-        tagList = arrayToList(valuesTagArray);
+        tagList = arrayToList(valuesTagArrayEasy);
         setAllViewMatrix(viewList, tagList);
 
         countSteps = 0;
