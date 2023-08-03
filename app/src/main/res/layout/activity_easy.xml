@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <TextView
             android:id="@+id/t_type_game"
@@ -85,14 +86,14 @@
                     android:layout_height="@dimen/size_image_tag"
                     android:layout_gravity="center"
                     android:onClick="showMove2"
-                    android:src="@drawable/logo_hex" />
+                    android:src="@drawable/logo_hex"
+                    android:contentDescription="@string/text_contentDescription"/>
 
                 <TextView
                     android:id="@+id/id_text1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
                     android:text="@string/number1"
                     android:textColor="@color/black"
                     android:textSize="@dimen/size_text_tag"
@@ -110,14 +111,14 @@
                     android:layout_height="@dimen/size_image_tag"
                     android:layout_gravity="center"
                     android:onClick="showMove2"
-                    android:src="@drawable/logo_hex" />
+                    android:src="@drawable/logo_hex"
+                    android:contentDescription="@string/text_contentDescription"/>
 
                 <TextView
                     android:id="@+id/id_text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
                     android:text="@string/number2"
                     android:textColor="@color/black"
                     android:textSize="@dimen/size_text_tag"
@@ -135,14 +136,14 @@
                     android:layout_height="@dimen/size_image_tag"
                     android:layout_gravity="center"
                     android:onClick="showMove2"
-                    android:src="@drawable/logo_hex" />
+                    android:src="@drawable/logo_hex"
+                    android:contentDescription="@string/text_contentDescription"/>
 
                 <TextView
                     android:id="@+id/id_text3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
                     android:text="@string/number3"
                     android:textColor="@color/black"
                     android:textSize="@dimen/size_text_tag"
@@ -160,14 +161,14 @@
                     android:layout_height="@dimen/size_image_tag"
                     android:layout_gravity="center"
                     android:onClick="showMove2"
-                    android:src="@drawable/logo_hex" />
+                    android:src="@drawable/logo_hex"
+                    android:contentDescription="@string/text_contentDescription"/>
 
                 <TextView
                     android:id="@+id/id_text4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
                     android:text="@string/number4"
                     android:textColor="@color/black"
                     android:textSize="@dimen/size_text_tag"
@@ -186,14 +187,14 @@
                     android:layout_gravity="center"
                     android:linksClickable="true"
                     android:onClick="showMove2"
-                    android:src="@drawable/logo_hex" />
+                    android:src="@drawable/logo_hex"
+                    android:contentDescription="@string/text_contentDescription"/>
 
                 <TextView
                     android:id="@+id/id_text5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
                     android:text="@string/number5"
                     android:textColor="@color/black"
                     android:textSize="@dimen/size_text_tag"
@@ -212,14 +213,14 @@
                     android:layout_gravity="center"
                     android:linksClickable="true"
                     android:onClick="showMove2"
-                    android:src="@drawable/logo_hex" />
+                    android:src="@drawable/logo_hex"
+                    android:contentDescription="@string/text_contentDescription"/>
 
                 <TextView
                     android:id="@+id/id_text6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
                     android:text="@string/number6"
                     android:textColor="@color/black"
                     android:textSize="@dimen/size_text_tag"
@@ -239,14 +240,14 @@
                     android:layout_gravity="center"
                     android:linksClickable="true"
                     android:onClick="showMove2"
-                    android:src="@drawable/logo_hex" />
+                    android:src="@drawable/logo_hex"
+                    android:contentDescription="@string/text_contentDescription"/>
 
                 <TextView
                     android:id="@+id/id_text7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
                     android:text="@string/number7"
                     android:textColor="@color/black"
                     android:textSize="@dimen/size_text_tag"
@@ -265,20 +266,19 @@
                     android:layout_gravity="center"
                     android:linksClickable="true"
                     android:onClick="showMove2"
-                    android:src="@drawable/logo_hex" />
+                    android:src="@drawable/logo_hex"
+                    android:contentDescription="@string/text_contentDescription"/>
 
                 <TextView
                     android:id="@+id/id_text8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
                     android:text="@string/number8"
                     android:textColor="@color/black"
                     android:textSize="@dimen/size_text_tag"
                     android:textStyle="bold" />
             </FrameLayout>
-
 
             <FrameLayout
                 android:id="@+id/id_frameLayout9"
@@ -292,21 +292,21 @@
                     android:layout_gravity="center"
                     android:linksClickable="true"
                     android:onClick="showMove2"
-                    android:src="@drawable/logo_transparante" />
+                    android:src="@drawable/logo_transparante"
+                    android:contentDescription="@string/text_contentDescription"/>
 
                 <TextView
                     android:id="@+id/id_text9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
                     android:text="@string/numberEmpty"
                     android:textColor="@color/black"
                     android:textSize="@dimen/size_text_tag"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:contentDescription="@string/text_contentDescription"/>
             </FrameLayout>
         </GridLayout>
-
 
         <Button
             android:id="@+id/b_shuffle"
@@ -328,7 +328,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="@dimen/padding"
-
             android:background="@drawable/custom_buttons_stop"
             android:onClick="finishGame"
             android:padding="16dp"

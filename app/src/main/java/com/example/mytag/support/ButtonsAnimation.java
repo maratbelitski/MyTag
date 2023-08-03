@@ -8,9 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
-
 import com.example.mytag.R;
-
 import java.util.List;
 
 /**
@@ -24,17 +22,13 @@ public interface ButtonsAnimation {
         Animation scaleUp = AnimationUtils.loadAnimation((Context) this, R.anim.scale_up);
         Animation scaleDown = AnimationUtils.loadAnimation((Context) this, R.anim.scale_down);
 
-        button.setOnTouchListener(new View.OnTouchListener() {
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    button.startAnimation(scaleUp);
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    button.startAnimation(scaleDown);
-                }
-                return false;
+        button.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                button.startAnimation(scaleUp);
+            } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                button.startAnimation(scaleDown);
             }
+            return false;
         });
     }
 
@@ -89,5 +83,4 @@ public interface ButtonsAnimation {
             list.get(i).startAnimation(shake);
         }
     }
-
 }

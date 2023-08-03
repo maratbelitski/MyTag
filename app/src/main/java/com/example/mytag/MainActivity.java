@@ -15,9 +15,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
-import android.widget.Toast;
-
 import com.example.mytag.support.ButtonsAnimation;
 import com.example.mytag.support.InfoActivity;
 import com.example.mytag.support.Language;
@@ -64,7 +61,6 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
         MyAdapter spinnerAdapter = new MyAdapter(this, R.layout.layout_spinner_language, languagesList);
         spinner.setAdapter(spinnerAdapter);
 
-//        Toast toast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @SuppressLint("UseCompatLoadingForDrawables")
             @Override
@@ -75,12 +71,9 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
 
                     if (s.equalsIgnoreCase("английский")) {
                         changeLanguage("en");
-//                        toast.setText("English is selected");
-//                        toast.show();
+
                     } else if (s.equalsIgnoreCase("russian")) {
                         changeLanguage("ru");
-//                        toast.setText("Выбран русский язык");
-//                        toast.show();
                     }
                 }
             }

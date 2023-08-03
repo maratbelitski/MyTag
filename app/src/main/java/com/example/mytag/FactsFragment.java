@@ -2,7 +2,6 @@ package com.example.mytag;
 import static com.example.mytag.WinnerActivity.getNumberFact;
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -19,7 +18,6 @@ import com.example.mytag.support.ButtonsAnimation;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 
 public class FactsFragment extends Fragment implements ButtonsAnimation,View.OnClickListener {
 
@@ -110,16 +108,13 @@ public class FactsFragment extends Fragment implements ButtonsAnimation,View.OnC
     public void showButtonAnimation(Button button) {
         Animation scaleUp = AnimationUtils.loadAnimation(this.getActivity(), R.anim.scale_up);
         Animation scaleDown = AnimationUtils.loadAnimation(this.getActivity(), R.anim.scale_down);
-        button.setOnTouchListener(new View.OnTouchListener() {
-
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    button.startAnimation(scaleUp);
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    button.startAnimation(scaleDown);
-                }
-                return false;
+        button.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                button.startAnimation(scaleUp);
+            } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                button.startAnimation(scaleDown);
             }
+            return false;
         });
     }
 }

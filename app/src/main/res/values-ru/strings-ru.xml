@@ -30,7 +30,6 @@
     <string name="text_your_move">Ваши ходы: </string>
     <string name="text_steps_winner">Ходов сделано: </string>
     <string name="text_end_game">Вы завершили партию !</string>
-    <string name="text_fact_end">ФАКТЫ О БЕЛКАХ</string>
     <string name="text_its_easy">Слишком легко… \nЗлая Белка Вам ничего не скажет!</string>
     <string name="text_3x3">"3x3"</string>
     <string name="text_4x4">"4x4"</string>

@@ -25,7 +25,8 @@
         android:id="@+id/image_title_game"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/image_easy" />
+        android:src="@drawable/image_easy"
+        android:contentDescription="@string/text_contentDescription"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,11 +44,11 @@
             android:dropDownWidth="wrap_content"
             android:background="@drawable/custom_buttons_stop"
             android:popupBackground="@color/black"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/spinner_2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/text_contentDescription"/>
 
         <Spinner
            android:id="@+id/spinner_2"
@@ -57,7 +58,6 @@
             android:layout_margin="@dimen/padding"
             android:background="@drawable/custom_buttons_stop"
             android:popupBackground="@color/black"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/spinner_1"
             app:layout_constraintStart_toStartOf="parent"

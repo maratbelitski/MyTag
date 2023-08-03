@@ -2,7 +2,6 @@ package com.example.mytag.support;
 import com.example.mytag.EasyActivity;
 import com.example.mytag.NormalActivity;
 import com.example.mytag.R;
-
 import java.util.ArrayList;
 import java.util.List;
 

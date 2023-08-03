@@ -35,8 +35,6 @@ public class Tags {
             {"*", " ", "15", "14", "13", "*"},
             {"*", "*", "*", "*", "*", "*"}};
 
-
-
    private static final String[][] valuesTagArrayEasy = new String[][]{
             {"*", "*", "*", "*", "*"},
             {"*", "1", "2", "3", "*"},

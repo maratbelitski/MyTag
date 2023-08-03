@@ -6,14 +6,11 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.mytag.support.ButtonsAnimation;
 import com.example.mytag.support.Methods;
 import com.example.mytag.support.MyView;
 import com.example.mytag.support.Tags;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

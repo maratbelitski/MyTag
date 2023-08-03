@@ -4,8 +4,6 @@
     android:duration="2000"
     android:fillAfter="true">
 
-
-
     <translate
         android:fromYDelta="-400%"
         android:toYDelta="0" />

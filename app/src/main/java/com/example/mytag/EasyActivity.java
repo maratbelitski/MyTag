@@ -37,9 +37,6 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     public static int positionNewEmpty = -1;
     public static int positionNewValue = -1;
     public static List<String> tagList;
-
-
-
     public static List<MyView> viewList;
     public static List<FrameLayout> layoutList;
 

@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="5dp"
-        android:src="@drawable/ic_language" />
+        android:src="@drawable/ic_language"
+        android:contentDescription="@string/text_contentDescription"/>
 
     <TextView
         android:id="@+id/spinner_text"
