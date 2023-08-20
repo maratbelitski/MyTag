@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
         Button buttonInfo = findViewById(R.id.b_info);
         Button buttonStartGame = findViewById(R.id.b_start_game);
         Button buttonRecords = findViewById(R.id.b_records);
+        Button buttonSettings = findViewById(R.id.b_settings);
         ImageView imageMyTag = findViewById(R.id.image_mytag);
         Spinner spinner = findViewById(R.id.s_spinner);
 
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
         showButtonAnimation(buttonInfo);
         showButtonAnimation(buttonStartGame);
         showButtonAnimation(buttonRecords);
+        showButtonAnimation(buttonSettings);
 
         Animation turn = AnimationUtils.loadAnimation((Context) this, R.anim.turn_animation);
         imageMyTag.startAnimation(turn);
@@ -103,6 +105,12 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
         Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
     }
+
+    public void showSettings(View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
     public void changeLanguage(String lang) {
         LocaleListCompat localeListCompat = androidx.core.os.LocaleListCompat.forLanguageTags(lang);
         AppCompatDelegate.setApplicationLocales(localeListCompat);

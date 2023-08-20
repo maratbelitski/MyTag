@@ -1,11 +1,15 @@
 package com.example.mytag;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +34,8 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         startActivity(intent);
         EasyActivity.this.finish();
     }
+
+    private static final String FON_START = "fonStartValue";
     public static final String TYPE_GAME ="typeGame";
     public static String typeGame;
     public static int countSteps;
@@ -51,11 +57,23 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     ImageView image1, image2, image3, image4, image5, image6, image7, image8, image9;
     TextView text1, text2, text3, text4, text5, text6, text7, text8, text9, text_step2,textTypeGame;
     FrameLayout layout1, layout2, layout3, layout4, layout5, layout6, layout7, layout8, layout9;
-
+    LinearLayout layoutBackground;
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_easy);
+
+        //меняем в памяти фон после выбора в сеттинге
+        SharedPreferences sharedPreferences = getSharedPreferences(FON_START, Context.MODE_PRIVATE);
+        String valueFon = sharedPreferences.getString("fonStartValue", "");
+
+        layoutBackground = findViewById(R.id.layout_background);
+        switch (valueFon) {
+            case  "fonStart" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start));
+            case  "fonStart2" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start2));
+            case  "fonStart3" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start3));
+        }
 
         typeGame = (String) getIntent().getExtras().get(TYPE_GAME);
 
