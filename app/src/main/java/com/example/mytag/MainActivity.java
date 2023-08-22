@@ -15,6 +15,9 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+
+import com.example.mytag.advance.AdvanceActivity;
+import com.example.mytag.settings.SettingsActivity;
 import com.example.mytag.support.ButtonsAnimation;
 import com.example.mytag.support.InfoActivity;
 import com.example.mytag.support.Language;
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
     }
 
     public void showRecords(View view) {
-        Intent intent = new Intent(this,AdvanceActivity.class);
+        Intent intent = new Intent(this, AdvanceActivity.class);
         startActivity(intent);
     }
 

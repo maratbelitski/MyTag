@@ -1,4 +1,4 @@
-package com.example.mytag;
+package com.example.mytag.advance;
 
 import static com.example.mytag.WinnerActivity.getCOUNT;
 import static com.example.mytag.WinnerActivity.getLastGame;
@@ -19,6 +19,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.mytag.R;
 import com.example.mytag.support.ButtonsAnimation;
 
 public class RecordsFragment extends Fragment implements ButtonsAnimation, View.OnClickListener {

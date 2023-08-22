@@ -1,4 +1,4 @@
-package com.example.mytag;
+package com.example.mytag.advance;
 import static com.example.mytag.WinnerActivity.getNumberFact;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,6 +14,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.mytag.R;
 import com.example.mytag.support.ButtonsAnimation;
 import java.util.ArrayList;
 import java.util.Arrays;

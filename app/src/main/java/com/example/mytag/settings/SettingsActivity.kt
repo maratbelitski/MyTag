@@ -1,15 +1,13 @@
-package com.example.mytag
+package com.example.mytag.settings
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mytag.R
 import com.example.mytag.support.ButtonsAnimation
-
 private const val FON_START = "fonStartValue"
-
 class SettingsActivity : AppCompatActivity(), ButtonsAnimation {
 
     @SuppressLint("MissingInflatedId", "UseCompatLoadingForDrawables")
@@ -24,9 +22,9 @@ class SettingsActivity : AppCompatActivity(), ButtonsAnimation {
         val fonStart3: CheckBox = findViewById(R.id.checkBox3)
 
         //сохраняем в памяти фон после выбора
-        val sharedPreferences = getSharedPreferences(FON_START, Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences(FON_START, MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        val valueFon = sharedPreferences.getString("fonStartValue", "");
+        val valueFon = sharedPreferences.getString("fonStartValue", "fonStart");
 
 
         when (valueFon) {
