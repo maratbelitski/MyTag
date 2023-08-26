@@ -56,13 +56,6 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
 
         LinearLayout layoutBackground = findViewById(R.id.layout_background);
         layoutBackground.setBackground(getDrawable(changeBackground(valueFon)));
-//        switch (valueFon) {
-//           case  "fonStart" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start));
-//           case  "fonStart2" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start2));
-//           case  "fonStart3" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start3));
-//            case  "fonStart4" -> layoutBackground.setBackground(getDrawable(R.color.material_100));
-//            case  "fonStart5" -> layoutBackground.setBackground(getDrawable(R.color.black));
-//        }
 
 
         List<String> types = Arrays.asList(getResources().getStringArray(R.array.type));
