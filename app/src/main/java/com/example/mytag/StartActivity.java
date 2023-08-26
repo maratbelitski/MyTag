@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,11 +15,13 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import com.example.mytag.support.ButtonsAnimation;
+import com.example.mytag.support.Methods;
+
 import java.util.Arrays;
 import java.util.List;
 
 
-public class StartActivity extends AppCompatActivity implements ButtonsAnimation {
+public class StartActivity extends AppCompatActivity implements ButtonsAnimation, Methods {
     private static final String FON_START = "fonStartValue";
     public String level = "";
     public String type = "";
@@ -46,7 +46,6 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
         Button buttonStop = findViewById(R.id.b_stop_game);
 
         TextView typeGame = findViewById(R.id.t_type_game);
-        LinearLayout layoutBackground = findViewById(R.id.layout_background);
 
         showButtonAnimation(buttonStart);
         showButtonAnimation(buttonStop);
@@ -55,12 +54,15 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
         SharedPreferences sharedPreferences = getSharedPreferences(FON_START, Context.MODE_PRIVATE);
         String valueFon = sharedPreferences.getString("fonStartValue", "");
 
-
-        switch (valueFon) {
-           case  "fonStart" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start));
-           case  "fonStart2" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start2));
-           case  "fonStart3" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start3));
-        }
+        LinearLayout layoutBackground = findViewById(R.id.layout_background);
+        layoutBackground.setBackground(getDrawable(changeBackground(valueFon)));
+//        switch (valueFon) {
+//           case  "fonStart" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start));
+//           case  "fonStart2" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start2));
+//           case  "fonStart3" -> layoutBackground.setBackground(getDrawable(R.drawable.fon_start3));
+//            case  "fonStart4" -> layoutBackground.setBackground(getDrawable(R.color.material_100));
+//            case  "fonStart5" -> layoutBackground.setBackground(getDrawable(R.color.black));
+//        }
 
 
         List<String> types = Arrays.asList(getResources().getStringArray(R.array.type));

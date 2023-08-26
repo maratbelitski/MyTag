@@ -237,4 +237,16 @@ public interface Methods {
         return array;
     }
 
+    default int changeBackground(String valueFon){
+        int result=0;
+
+        switch (valueFon) {
+            case  "fonStart" -> result = R.drawable.fon_start;
+            case  "fonStart2" -> result = R.drawable.fon_start2;
+            case  "fonStart3" -> result = R.drawable.fon_start3;
+            case  "fonStart4" -> result = R.color.material_100;
+            case  "fonStart5" -> result = R.color.black;
+        }
+        return result;
+    }
 }
