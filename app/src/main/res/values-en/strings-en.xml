@@ -4,6 +4,7 @@
     <string name="tab_facts">Facts</string>
 
     <string name="toolbar_advance">MyTag. Advance</string>
+    <string name="toolbar_setting">MyTag. Setting</string>
 
     <string name="spinner_default">Default</string>
     <string name="spinner_ru">Russian</string>

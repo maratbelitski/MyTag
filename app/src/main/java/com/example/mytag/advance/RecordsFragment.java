@@ -52,7 +52,7 @@ public class RecordsFragment extends Fragment implements ButtonsAnimation, View.
 
         Button ok = view.findViewById(R.id.b_ok);
         ok.setOnClickListener(this);
-        showButtonAnimation(view.findViewById(R.id.b_ok));
+        showButtonAnimation(ok);
 
         step3x3_classic = view.findViewById(R.id.step3x3_classic);
         step4x4_classic = view.findViewById(R.id.step4x4_classic);

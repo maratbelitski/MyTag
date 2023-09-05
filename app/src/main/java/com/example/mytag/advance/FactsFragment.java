@@ -40,7 +40,7 @@ public class FactsFragment extends Fragment implements ButtonsAnimation,View.OnC
         noFacts = view.findViewById(R.id.t_noFacts);
         Button ok = view.findViewById(R.id.b_ok);
         ok.setOnClickListener(this);
-        showButtonAnimation(view.findViewById(R.id.b_ok));
+        showButtonAnimation(ok);
 
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(getNumberFact(), Context.MODE_PRIVATE);
 

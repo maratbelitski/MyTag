@@ -4,6 +4,7 @@
     <string name="tab_facts">Факты</string>
 
     <string name="toolbar_advance">MyTag. Достижения</string>
+    <string name="toolbar_setting">MyTag. Настройки</string>
 
     <string name="spinner_default">По умолчанию</string>
     <string name="spinner_ru">Русский</string>
