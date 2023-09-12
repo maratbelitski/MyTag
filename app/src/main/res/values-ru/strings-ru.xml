@@ -2,6 +2,8 @@
 <resources>
     <string name="tab_records">Рекорды</string>
     <string name="tab_facts">Факты</string>
+    <string name="tab_backgrounds">Фон</string>
+    <string name="tab_shapes">Фишки</string>
 
     <string name="toolbar_advance">MyTag. Достижения</string>
     <string name="toolbar_setting">MyTag. Настройки</string>
@@ -25,7 +27,8 @@
     <string name="text_info_title">ИНФОРМАЦИЯ</string>
     <string name="text_snake">"ЗМЕЙКА"</string>
     <string name="text_classic">"КЛАССИКА"</string>
-    <string name="text_choose">"Выберите фон"</string>
+    <string name="text_choose_background">"Выберите фон"</string>
+    <string name="text_choose_tags">"Выберите фишки"</string>
     <string name="text_your_records">Лучшие результаты:</string>
     <string name="text_game">ИГРА</string>
     <string name="text_level">ПОЛЕ</string>

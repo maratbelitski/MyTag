@@ -133,5 +133,4 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
         startActivity(intent);
         StartActivity.this.finish();
     }
-
 }

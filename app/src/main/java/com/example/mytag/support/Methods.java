@@ -1,7 +1,9 @@
 package com.example.mytag.support;
+
 import com.example.mytag.EasyActivity;
 import com.example.mytag.NormalActivity;
 import com.example.mytag.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,19 +28,29 @@ public interface Methods {
     }
 
 
-    default void setAllViewMatrix(List<MyView> listView, List<String> list) {
+    default void setAllViewMatrix(List<MyView> listView, List<String> list, String shape) {
         for (int i = 0; i < listView.size(); i++) {
             listView.get(i).getMyTextView().setText(list.get(i));
             if (list.get(i).equals(" ")) {
                 listView.get(i).getMyImageView().setImageResource(R.drawable.logo_transparante);
-            } else {
+            } else if (shape.equals("shapeOne")) {
                 listView.get(i).getMyImageView().setImageResource(R.drawable.logo_hex);
+            } else if (shape.equals("shapeTwo")) {
+                listView.get(i).getMyImageView().setImageResource(R.drawable.logo_rect);
+            } else if (shape.equals("shapeThree")) {
+                listView.get(i).getMyImageView().setImageResource(R.drawable.logo_hex_blue);
+            } else if (shape.equals("shapeFour")) {
+                listView.get(i).getMyImageView().setImageResource(R.drawable.logo_rect_blue);
+            } else if (shape.equals("shapeFive")) {
+                listView.get(i).getMyImageView().setImageResource(R.drawable.logo_hex_grey);
+            } else {
+                listView.get(i).getMyImageView().setImageResource(R.drawable.logo_rect_grey);
             }
         }
     }
 
 
-    default void changePositionView(String string, int positionNewEmpty, int positionNewValue) {
+    default void changePositionView(String string, int positionNewEmpty, int positionNewValue, String shape) {
 
         List<MyView> listView;
         String valueTextNow;
@@ -58,10 +70,20 @@ public interface Methods {
         if ((positionNewValue != -1) || (positionNewEmpty != -1)) {
             listView.get(positionNewEmpty - 1).getMyImageView().setImageResource(R.drawable.logo_transparante);
             listView.get(positionNewEmpty - 1).getMyTextView().setText(R.string.numberEmpty);
-
-            listView.get(positionNewValue - 1).getMyImageView().setImageResource(R.drawable.logo_hex);
+            if (shape.equals("shapeOne")) {
+                listView.get(positionNewValue - 1).getMyImageView().setImageResource(R.drawable.logo_hex);
+            } else if (shape.equals("shapeTwo")) {
+                listView.get(positionNewValue - 1).getMyImageView().setImageResource(R.drawable.logo_rect);
+            } else if (shape.equals("shapeThree")) {
+                listView.get(positionNewValue - 1).getMyImageView().setImageResource(R.drawable.logo_hex_blue);
+            } else if (shape.equals("shapeFour")) {
+                listView.get(positionNewValue - 1).getMyImageView().setImageResource(R.drawable.logo_rect_blue);
+            } else if (shape.equals("shapeFive")) {
+                listView.get(positionNewValue - 1).getMyImageView().setImageResource(R.drawable.logo_hex_grey);
+            } else {
+                listView.get(positionNewValue - 1).getMyImageView().setImageResource(R.drawable.logo_rect_grey);
+            }
             listView.get(positionNewValue - 1).getMyTextView().setText(valueTextNow);
-
             countSteps++;
 
             if (string.equals("easy")) {
@@ -155,7 +177,7 @@ public interface Methods {
     }
 
 
-    default void ClickOnTag(String string) {
+    default void ClickOnTag(String string, String shape) {
         String[][] array;
         int positionNewEmpty;
         int positionNewValue;
@@ -190,7 +212,7 @@ public interface Methods {
                             positionNewEmpty = NormalActivity.positionNewEmpty;
                         }
 
-                        changePositionView(string, positionNewEmpty, positionNewValue);
+                        changePositionView(string, positionNewEmpty, positionNewValue, shape);
                         exit = true;
                     }
                 }
@@ -237,15 +259,15 @@ public interface Methods {
         return array;
     }
 
-    default int changeBackground(String valueFon){
-        int result=0;
+    default int changeBackground(String valueFon) {
+        int result = 0;
 
         switch (valueFon) {
-            case  "fonStart" -> result = R.drawable.fon_start;
-            case  "fonStart2" -> result = R.drawable.fon_start2;
-            case  "fonStart3" -> result = R.drawable.fon_start3;
-            case  "fonStart4" -> result = R.color.material_100;
-            case  "fonStart5" -> result = R.color.black;
+            case "fonStart" -> result = R.drawable.fon_start;
+            case "fonStart2" -> result = R.drawable.fon_start2;
+            case "fonStart3" -> result = R.drawable.fon_start3;
+            case "fonStart4" -> result = R.color.material_100;
+            case "fonStart5" -> result = R.color.black;
         }
         return result;
     }

@@ -37,8 +37,8 @@ class SettingsActivity : AppCompatActivity(), ButtonsAnimation, TabConfiguration
     }
     override fun onConfigureTab(tab: TabLayout.Tab, position: Int) {
         when (position) {
-            0 -> tab.setText("Backgrounds")
-            1 -> tab.setText("Shape")
+            0 -> tab.setText(R.string.tab_backgrounds)
+            1 -> tab.setText(R.string.tab_shapes)
         }
     }
 
@@ -46,6 +46,7 @@ class SettingsActivity : AppCompatActivity(), ButtonsAnimation, TabConfiguration
     class SelectionsPagerAdapter2(fragmentActivity: FragmentActivity) :
         FragmentStateAdapter(fragmentActivity) {
         override fun createFragment(position: Int): Fragment {
+            val n = null
             return when (position) {
                 0 -> BackgroundFragment()
                 1 -> TagsFragment()

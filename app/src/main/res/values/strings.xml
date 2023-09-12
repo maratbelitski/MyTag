@@ -25,6 +25,8 @@
 
     <string name="tab_records">Records</string>
     <string name="tab_facts">Facts</string>
+    <string name="tab_backgrounds">Backgrounds</string>
+    <string name="tab_shapes">Shapes</string>
 
     <string name="toolbar_advance">MyTag. Advance</string>
     <string name="toolbar_setting">MyTag. Setting</string>
@@ -48,7 +50,8 @@
     <string name="text_info_title">INFORMATION</string>
     <string name="text_snake">"SNAKE"</string>
     <string name="text_classic">"CLASSIC"</string>
-    <string name="text_choose">"Choose background"</string>
+    <string name="text_choose_background">"Choose background"</string>
+    <string name="text_choose_tags">"Choose tags"</string>
     <string name="text_your_records">Best results:</string>
     <string name="text_game">game</string>
     <string name="text_level">size</string>

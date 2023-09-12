@@ -1,4 +1,5 @@
 package com.example.mytag.settings
+
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,10 +23,9 @@ class BackgroundFragment : Fragment(), ButtonsAnimation {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val view = inflater.inflate(R.layout.fragment_background, container, false)
 
-        val ok:Button = view.findViewById(R.id.b_ok)
+        val ok: Button = view.findViewById(R.id.b_ok)
         showButtonAnimation(ok)
 
         val fonStart: CheckBox = view.findViewById(R.id.checkBox)
@@ -38,7 +38,8 @@ class BackgroundFragment : Fragment(), ButtonsAnimation {
 
 
         //сохраняем в памяти фон после выбора
-        val sharedPreferences =  this.requireActivity().getSharedPreferences(FON_START, AppCompatActivity.MODE_PRIVATE)
+        val sharedPreferences =
+            this.requireActivity().getSharedPreferences(FON_START, AppCompatActivity.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         val valueFon = sharedPreferences.getString("fonStartValue", "fonStart");
 
