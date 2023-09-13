@@ -8,7 +8,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.MyTagTest"
+        applicationId "com.MyTag"
         minSdk 22
         targetSdk 33
         versionCode 4

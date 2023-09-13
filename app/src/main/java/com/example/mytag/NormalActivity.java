@@ -88,24 +88,6 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
         showButtonAnimation(stopGame);
         showButtonAnimation(shuffleTags);
 
-//
-//        layout1 = findViewById(R.id.id_frameLayout1);
-//        layout2 = findViewById(R.id.id_frameLayout2);
-//        layout3 = findViewById(R.id.id_frameLayout3);
-//        layout4 = findViewById(R.id.id_frameLayout4);
-//        layout5 = findViewById(R.id.id_frameLayout5);
-//        layout6 = findViewById(R.id.id_frameLayout6);
-//        layout7 = findViewById(R.id.id_frameLayout7);
-//        layout8 = findViewById(R.id.id_frameLayout8);
-//        layout9 = findViewById(R.id.id_frameLayout9);
-//        layout10 = findViewById(R.id.id_frameLayout10);
-//        layout11 = findViewById(R.id.id_frameLayout11);
-//        layout12 = findViewById(R.id.id_frameLayout12);
-//        layout13 = findViewById(R.id.id_frameLayout13);
-//        layout14 = findViewById(R.id.id_frameLayout14);
-//        layout15 = findViewById(R.id.id_frameLayout15);
-//        layout16 = findViewById(R.id.id_frameLayout16);
-
 
         layoutList = new ArrayList<>();
         layoutList.add(layout1 = findViewById(R.id.id_frameLayout1));
