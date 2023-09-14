@@ -52,7 +52,7 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
 
         //меняем в памяти фон после выбора в сеттинге
         SharedPreferences sharedPreferences = getSharedPreferences(FON_START, Context.MODE_PRIVATE);
-        String valueFon = sharedPreferences.getString("fonStartValue", "");
+        String valueFon = sharedPreferences.getString("fonStartValue", "fonStart");
 
         LinearLayout layoutBackground = findViewById(R.id.layout_background);
         layoutBackground.setBackground(getDrawable(changeBackground(valueFon)));

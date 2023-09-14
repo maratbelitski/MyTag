@@ -72,7 +72,7 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
         String valueFon = sharedPreferences.getString("fonStartValue", "");
 
         SharedPreferences sharedPreferences2 = getSharedPreferences(SHAPE_TAGS, Context.MODE_PRIVATE);
-        shape = sharedPreferences2.getString("shapeTags", "");
+        shape = sharedPreferences2.getString("shapeTags", "shapeOne");
 
         layoutBackground = findViewById(R.id.layout_background);
         layoutBackground.setBackground(getDrawable(changeBackground(valueFon)));

@@ -46,7 +46,6 @@ class SettingsActivity : AppCompatActivity(), ButtonsAnimation, TabConfiguration
     class SelectionsPagerAdapter2(fragmentActivity: FragmentActivity) :
         FragmentStateAdapter(fragmentActivity) {
         override fun createFragment(position: Int): Fragment {
-            val n = null
             return when (position) {
                 0 -> BackgroundFragment()
                 1 -> TagsFragment()
