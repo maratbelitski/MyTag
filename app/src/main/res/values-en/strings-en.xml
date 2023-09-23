@@ -11,6 +11,7 @@
     <string name="spinner_default">Default</string>
     <string name="spinner_ru">Russian</string>
     <string name="spinner_en">English</string>
+    <string name="spinner_pt">Portuguese</string>
 
     <string name="button_rules">Rules</string>
     <string name="button_ok">OK</string>
@@ -44,7 +45,7 @@
     <string name="text_fact_about">FACTS OF SQUIRRELS</string>
     <string name="text_info">Application <b>MyTag</b>  it is an information and entertainment project.
 \nHere you will train your mind and learn a lot of interesting facts about funny squirrel animals!
-\n\nApplication version: 1.1
+\n\nApplication version: 1.1.1
 \nDate: 2023
 \nDeveloper: Belitski Marat
 \nemail: belitski.dev@gmail.com</string>

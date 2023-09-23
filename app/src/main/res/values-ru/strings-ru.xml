@@ -11,6 +11,7 @@
     <string name="spinner_default">По умолчанию</string>
     <string name="spinner_ru">Русский</string>
     <string name="spinner_en">Английский</string>
+    <string name="spinner_pt">Португальский</string>
 
     <string name="button_rules">Правила</string>
     <string name="button_ok">Понятно</string>
@@ -43,8 +44,8 @@
     <string name="text_rules2">В зависимости от типа игры, имеет значение направление движения при сборе:</string>
     <string name="text_fact_about">ФАКТЫ О БЕЛКАХ</string>
     <string name="text_info">Приложение <b>MyTag</b>  является информационно - развлекательным проектом.
-\nЗдесь Вы потренеруете свой ум и узнаете много интересных фактов о забавных зверьках - белках!
-\n\nВерсия приложения: 1.1
+\nЗдесь Вы потренируете свой ум и узнаете много интересных фактов о забавных зверьках - белках!
+\n\nВерсия приложения: 1.1.1
 \nДата: 2023
 \nРазработчик: Belitski Marat
 \nemail: belitski.dev@gmail.com</string>

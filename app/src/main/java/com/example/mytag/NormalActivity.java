@@ -69,7 +69,7 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
 
         //меняем в памяти фон после выбора в сеттинге
         SharedPreferences sharedPreferences = getSharedPreferences(FON_START, Context.MODE_PRIVATE);
-        String valueFon = sharedPreferences.getString("fonStartValue", "");
+        String valueFon = sharedPreferences.getString("fonStartValue", "fonStart");
 
         SharedPreferences sharedPreferences2 = getSharedPreferences(SHAPE_TAGS, Context.MODE_PRIVATE);
         shape = sharedPreferences2.getString("shapeTags", "shapeOne");
