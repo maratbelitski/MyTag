@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
                     } else if (s.equalsIgnoreCase("russian")|| s.equalsIgnoreCase("Russo")) {
                         changeLanguage("ru");
                     }else if (s.equalsIgnoreCase("portuguese")|| s.equalsIgnoreCase("Португальский")) {
-                        changeLanguage("pt");
+                        changeLanguage("pt ");
                     }
                 }
             }
