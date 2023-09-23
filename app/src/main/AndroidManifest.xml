@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_test"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_mytag"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar"
         tools:ignore="LockedOrientationActivity"
         tools:targetApi="33">
-
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
         <activity
             android:name=".support.SplashActivity"
             android:exported="true"
@@ -53,7 +59,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AdvanceActivity"
+            android:name=".advance.AdvanceActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
     </application>

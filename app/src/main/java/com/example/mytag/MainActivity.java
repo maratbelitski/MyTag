@@ -15,6 +15,9 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+
+import com.example.mytag.advance.AdvanceActivity;
+import com.example.mytag.settings.SettingsActivity;
 import com.example.mytag.support.ButtonsAnimation;
 import com.example.mytag.support.InfoActivity;
 import com.example.mytag.support.Language;
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
         Button buttonInfo = findViewById(R.id.b_info);
         Button buttonStartGame = findViewById(R.id.b_start_game);
         Button buttonRecords = findViewById(R.id.b_records);
+        Button buttonSettings = findViewById(R.id.b_settings);
         ImageView imageMyTag = findViewById(R.id.image_mytag);
         Spinner spinner = findViewById(R.id.s_spinner);
 
@@ -45,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
         showButtonAnimation(buttonInfo);
         showButtonAnimation(buttonStartGame);
         showButtonAnimation(buttonRecords);
+        showButtonAnimation(buttonSettings);
 
         Animation turn = AnimationUtils.loadAnimation((Context) this, R.anim.turn_animation);
         imageMyTag.startAnimation(turn);
@@ -52,11 +57,13 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
         List<Language> languagesList = new ArrayList<>();
         String rus = getResources().getString(R.string.spinner_ru);
         String eng = getResources().getString(R.string.spinner_en);
+        String pt = getResources().getString(R.string.spinner_pt);
         String def = getResources().getString(R.string.spinner_default);
 
         languagesList.add(new Language(def, R.drawable.ic_language));
         languagesList.add(new Language(eng, R.drawable.ic_usa));
         languagesList.add(new Language(rus, R.drawable.ic_russia));
+        languagesList.add(new Language(pt, R.drawable.ic_portugal));
 
         MyAdapter spinnerAdapter = new MyAdapter(this, R.layout.layout_spinner_language, languagesList);
         spinner.setAdapter(spinnerAdapter);
@@ -69,11 +76,12 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
                     Language selectedItem = (Language) spinner.getSelectedItem();
                     String s = selectedItem.getName();
 
-                    if (s.equalsIgnoreCase("английский")) {
+                    if (s.equalsIgnoreCase("английский") || s.equalsIgnoreCase("inglês") ) {
                         changeLanguage("en");
-
-                    } else if (s.equalsIgnoreCase("russian")) {
+                    } else if (s.equalsIgnoreCase("russian") || s.equalsIgnoreCase("russo") ) {
                         changeLanguage("ru");
+                    }else if (s.equalsIgnoreCase("portuguese") || s.equalsIgnoreCase("португальский") ) {
+                        changeLanguage("pt");
                     }
                 }
             }
@@ -95,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
     }
 
     public void showRecords(View view) {
-        Intent intent = new Intent(this,AdvanceActivity.class);
+        Intent intent = new Intent(this, AdvanceActivity.class);
         startActivity(intent);
     }
 
@@ -103,6 +111,12 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
         Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
     }
+
+    public void showSettings(View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
     public void changeLanguage(String lang) {
         LocaleListCompat localeListCompat = androidx.core.os.LocaleListCompat.forLanguageTags(lang);
         AppCompatDelegate.setApplicationLocales(localeListCompat);

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_records">Recorde</string>
+    <string name="tab_facts">Fato</string>
+    <string name="tab_backgrounds">Fundo</string>
+    <string name="tab_shapes">Ficha</string>
+
+    <string name="toolbar_advance">MyTag. Realizacao</string>
+    <string name="toolbar_setting">MyTag. Sintonizacao</string>
+
+    <string name="spinner_default">Predefinição</string>
+    <string name="spinner_ru">Russo</string>
+    <string name="spinner_en">Inglês</string>
+    <string name="spinner_pt">Português</string>
+
+    <string name="button_rules">Ordenança</string>
+    <string name="button_ok">OK</string>
+    <string name="button_to_game">Jogar</string>
+    <string name="button_out_game">Sair</string>
+    <string name="button_start_game">Partida</string>
+    <string name="button_stop_game">Terminar</string>
+    <string name="button_shuffle">Misturar</string>
+    <string name="button_records">Realização</string>
+    <string name="button_settings">Sintonização</string>
+    <string name="button_info">Info</string>
+    <string name="button_rate_app">Avalie !</string>
+
+    <string name="text_info_title">INFORMAÇÃO</string>
+    <string name="text_snake">"SNAKE"</string>
+    <string name="text_classic">"CLASSIC"</string>
+    <string name="text_choose_background">"Escolha o fundo"</string>
+    <string name="text_choose_tags">"Escolha as fichas"</string>
+    <string name="text_your_records">Melhores resultados:</string>
+    <string name="text_game">JOGO</string>
+    <string name="text_level">CAMPO</string>
+    <string name="text_move">JOGADA</string>
+    <string name="text_your_move">Seus movimentos: </string>
+    <string name="text_steps_winner">Movimentos feitos: </string>
+    <string name="text_end_game">Você terminou o jogo !</string>
+    <string name="text_its_easy">Muito fácil… \nO esquilo malvado não lhe dirá nada!</string>
+    <string name="text_3x3">"3x3"</string>
+    <string name="text_4x4">"4x4"</string>
+    <string name="text_no_fact">Os fatos ainda não foram revelados por você.\nGanhe e descubra informações!</string>
+    <string name="text_rules2">Dependendo do tipo de jogo, a direção do movimento ao coletar é importante:</string>
+    <string name="text_fact_about">FATOS SOBRE ESQUILOS</string>
+    <string name="text_info">Aplicação <b>MyTag</b>  é um projeto de informação e entretenimento.
+\nAqui você treinará sua mente e aprenderá muitos fatos interessantes sobre animais engraçados - esquilos!
+\n\nVersão do aplicativo: 1.1.1
+\nData: 2023
+\nDesenvolvimento: Belitski Marat
+\nemail: belitski.dev@gmail.com</string>
+
+    <string name="rules">JOGO \"MyTag\":
+\n\nMovendo os nós ao longo do campo, consiga organizá - los por números, de preferência fazendo,
+\no mínimo possível de deslocamentos.
+\n\nAo completar lotes com dimensões de campo 4x4, você será nomeado um fato interessante sobre proteínas!
+\nVocê será capaz de descobrir 10 fatos interessantes para a passagem do tipo de jogo SNAKE
+e 10 fatos para a passagem do tipo de jogo CLASSIC!
+\nSe você terminar o tamanho do lote 3x3, a proteína prejudicial não lhe dirá nada-não se ofenda com ela!
+\nGanhe e descubra mais fatos interessantes sobre os animais!
+\n\nO campo de jogo será apresentado com os nós dispostos aleatoriamente. Sua tarefa, movendo as formas
+\nobter o resultado mostrado abaixo.
+\nA dificuldade do jogo é afetada pelo tamanho do campo de jogo.
+\nExistem várias espécies:
+</string>
+</resources>

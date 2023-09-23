@@ -19,8 +19,8 @@ public interface ButtonsAnimation {
 
     @SuppressLint("ClickableViewAccessibility")
     default void showButtonAnimation(Button button) {
-        Animation scaleUp = AnimationUtils.loadAnimation((Context) this, R.anim.scale_up);
-        Animation scaleDown = AnimationUtils.loadAnimation((Context) this, R.anim.scale_down);
+        Animation scaleUp = AnimationUtils.loadAnimation(button.getContext(), R.anim.scale_up);
+        Animation scaleDown = AnimationUtils.loadAnimation(button.getContext(), R.anim.scale_down);
 
         button.setOnTouchListener((v, event) -> {
             if (event.getAction() == MotionEvent.ACTION_DOWN) {

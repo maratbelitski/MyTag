@@ -1,10 +1,13 @@
 package com.example.mytag;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mytag.support.ButtonsAnimation;
@@ -25,6 +28,8 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
         startActivity(intent);
         NormalActivity.this.finish();
     }
+    private static final String FON_START = "fonStartValue";
+    private static final String SHAPE_TAGS = "shapeTags";
     public static final String TYPE_GAME = "typeGame";
     public static String typeGame;
     public static int countSteps;
@@ -54,11 +59,23 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
 
     FrameLayout layout1, layout2, layout3, layout4, layout5, layout6, layout7, layout8,
             layout9, layout10, layout11, layout12, layout13, layout14, layout15, layout16;
+    LinearLayout layoutBackground;
+    String shape;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_normal);
+
+        //меняем в памяти фон после выбора в сеттинге
+        SharedPreferences sharedPreferences = getSharedPreferences(FON_START, Context.MODE_PRIVATE);
+        String valueFon = sharedPreferences.getString("fonStartValue", "fonStart");
+
+        SharedPreferences sharedPreferences2 = getSharedPreferences(SHAPE_TAGS, Context.MODE_PRIVATE);
+        shape = sharedPreferences2.getString("shapeTags", "shapeOne");
+
+        layoutBackground = findViewById(R.id.layout_background);
+        layoutBackground.setBackground(getDrawable(changeBackground(valueFon)));
 
         typeGame = (String) getIntent().getExtras().get(TYPE_GAME);
 
@@ -70,24 +87,6 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
 
         showButtonAnimation(stopGame);
         showButtonAnimation(shuffleTags);
-
-
-        layout1 = findViewById(R.id.id_frameLayout1);
-        layout2 = findViewById(R.id.id_frameLayout2);
-        layout3 = findViewById(R.id.id_frameLayout3);
-        layout4 = findViewById(R.id.id_frameLayout4);
-        layout5 = findViewById(R.id.id_frameLayout5);
-        layout6 = findViewById(R.id.id_frameLayout6);
-        layout7 = findViewById(R.id.id_frameLayout7);
-        layout8 = findViewById(R.id.id_frameLayout8);
-        layout9 = findViewById(R.id.id_frameLayout9);
-        layout10 = findViewById(R.id.id_frameLayout10);
-        layout11 = findViewById(R.id.id_frameLayout11);
-        layout12 = findViewById(R.id.id_frameLayout12);
-        layout13 = findViewById(R.id.id_frameLayout13);
-        layout14 = findViewById(R.id.id_frameLayout14);
-        layout15 = findViewById(R.id.id_frameLayout15);
-        layout16 = findViewById(R.id.id_frameLayout16);
 
 
         layoutList = new ArrayList<>();
@@ -138,7 +137,7 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
 
         tagList = arrayToList(valuesTagArrayNormal);
         shuffleAnimation(layoutList);
-        setAllViewMatrix(viewList, tagList);
+        setAllViewMatrix(viewList, tagList,shape);
         countSteps=0;
     }
 
@@ -154,7 +153,7 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
 
         valueTextNow = findValueTextNow(view);
 
-        ClickOnTag(string);
+        ClickOnTag(string,shape);
         text_step2.setText(String.valueOf(countSteps));
 
         if(Arrays.deepEquals(valuesTagArrayNormal,matrix)){
@@ -181,7 +180,7 @@ public class NormalActivity extends AppCompatActivity implements Methods, Button
         valuesTagArrayNormal = shuffleTag(valuesTagArrayNormal);
         tagList = arrayToList(valuesTagArrayNormal);
 
-        setAllViewMatrix(viewList, tagList);
+        setAllViewMatrix(viewList, tagList,shape);
         countSteps=0;
         text_step2.setText(String.valueOf(countSteps));
     }

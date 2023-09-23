@@ -28,8 +28,8 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_gravity="center"
-                android:src="@drawable/logo_mytag"
-                android:contentDescription="@string/text_contentDescription"/>
+                android:contentDescription="@string/text_contentDescription"
+                android:src="@drawable/logo_mytag" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -67,7 +67,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="MissingConstraints" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            
+
 
             <Button
                 android:id="@+id/b_rules"
@@ -93,6 +93,20 @@
                 android:onClick="showRecords"
                 android:padding="@dimen/padding"
                 android:text="@string/button_records"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_text_button"
+                tools:ignore="UsingOnClickInXml" />
+
+            <Button
+                android:id="@+id/b_settings"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_buttons"
+                android:onClick="showSettings"
+                android:padding="@dimen/padding"
+                android:text="@string/button_settings"
                 android:textColor="@color/white"
                 android:textSize="@dimen/size_text_button"
                 tools:ignore="UsingOnClickInXml" />

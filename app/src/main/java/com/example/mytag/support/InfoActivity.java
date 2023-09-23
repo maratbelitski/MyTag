@@ -21,7 +21,7 @@ public class InfoActivity extends AppCompatActivity implements ButtonsAnimation{
     }
 
     public void goToPage(View view) {
-       String id = "https://play.google.com/store/apps/dev?id=5651473701290024308";
+       String id = "https://play.google.com/store/apps/details?id=com.MyTag";
     Intent intent = new Intent(ACTION_VIEW, Uri.parse(id));
     startActivity(intent);
     }

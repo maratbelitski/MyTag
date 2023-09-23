@@ -1,11 +1,15 @@
 package com.example.mytag;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +34,9 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         startActivity(intent);
         EasyActivity.this.finish();
     }
+
+    private static final String FON_START = "fonStartValue";
+    private static final String SHAPE_TAGS = "shapeTags";
     public static final String TYPE_GAME ="typeGame";
     public static String typeGame;
     public static int countSteps;
@@ -51,11 +58,23 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
     ImageView image1, image2, image3, image4, image5, image6, image7, image8, image9;
     TextView text1, text2, text3, text4, text5, text6, text7, text8, text9, text_step2,textTypeGame;
     FrameLayout layout1, layout2, layout3, layout4, layout5, layout6, layout7, layout8, layout9;
-
+    LinearLayout layoutBackground;
+    String shape;
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_easy);
+
+        //меняем в памяти фон после выбора в сеттинге
+        SharedPreferences sharedPreferences = getSharedPreferences(FON_START, Context.MODE_PRIVATE);
+        String valueFon = sharedPreferences.getString("fonStartValue", "fonStart");
+
+        SharedPreferences sharedPreferences2 = getSharedPreferences(SHAPE_TAGS, Context.MODE_PRIVATE);
+        shape = sharedPreferences2.getString("shapeTags", "shapeOne");
+
+        layoutBackground = findViewById(R.id.layout_background);
+        layoutBackground.setBackground(getDrawable(changeBackground(valueFon)));
 
         typeGame = (String) getIntent().getExtras().get(TYPE_GAME);
 
@@ -67,17 +86,6 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
 
         showButtonAnimation(stopGame);
         showButtonAnimation(shuffleTags);
-
-        layout1 = findViewById(R.id.id_frameLayout1);
-        layout2 = findViewById(R.id.id_frameLayout2);
-        layout3 = findViewById(R.id.id_frameLayout3);
-        layout4 = findViewById(R.id.id_frameLayout4);
-        layout5 = findViewById(R.id.id_frameLayout5);
-        layout6 = findViewById(R.id.id_frameLayout6);
-        layout7 = findViewById(R.id.id_frameLayout7);
-        layout8 = findViewById(R.id.id_frameLayout8);
-        layout9 = findViewById(R.id.id_frameLayout9);
-
 
         layoutList = new ArrayList<>();
         layoutList.add(layout1 = findViewById(R.id.id_frameLayout1));
@@ -102,6 +110,7 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         viewList.add(new MyView(text8 = findViewById(R.id.id_text8), image8 = findViewById(R.id.id_image8)));
         viewList.add(new MyView(text9 = findViewById(R.id.id_text9), image9 = findViewById(R.id.id_image9)));
 
+
         if(typeGame.equals("classic")){
             valuesTagArrayEasy = shuffleTag(valuesTagArrayEasy);
             textTypeGame.setText(R.string.text_classic);
@@ -112,7 +121,8 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
 
         tagList = arrayToList(valuesTagArrayEasy);
         shuffleAnimation(layoutList);
-        setAllViewMatrix(viewList, tagList);
+        //заполнение фишек форма и значение
+        setAllViewMatrix(viewList, tagList,shape);
         countSteps = 0;
     }
 
@@ -129,7 +139,7 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
 
         valueTextNow = findValueTextNow(view);
 
-        ClickOnTag(string);
+        ClickOnTag(string,shape);
         text_step2.setText(String.valueOf(countSteps));
 
 
@@ -156,7 +166,8 @@ public class EasyActivity extends AppCompatActivity implements Methods, ButtonsA
         valuesTagArrayEasy = shuffleTag(valuesTagArrayEasy);
 
         tagList = arrayToList(valuesTagArrayEasy);
-        setAllViewMatrix(viewList, tagList);
+        //заполнение фишек форма и значение
+        setAllViewMatrix(viewList, tagList,shape);
 
         countSteps = 0;
         text_step2.setText(String.valueOf(countSteps));

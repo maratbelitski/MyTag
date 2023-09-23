@@ -1,22 +1,28 @@
 package com.example.mytag;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import com.example.mytag.support.ButtonsAnimation;
+import com.example.mytag.support.Methods;
+
 import java.util.Arrays;
 import java.util.List;
 
 
-public class StartActivity extends AppCompatActivity implements ButtonsAnimation {
-
+public class StartActivity extends AppCompatActivity implements ButtonsAnimation, Methods {
+    private static final String FON_START = "fonStartValue";
     public String level = "";
     public String type = "";
 
@@ -43,6 +49,14 @@ public class StartActivity extends AppCompatActivity implements ButtonsAnimation
 
         showButtonAnimation(buttonStart);
         showButtonAnimation(buttonStop);
+
+        //меняем в памяти фон после выбора в сеттинге
+        SharedPreferences sharedPreferences = getSharedPreferences(FON_START, Context.MODE_PRIVATE);
+        String valueFon = sharedPreferences.getString("fonStartValue", "fonStart");
+
+        LinearLayout layoutBackground = findViewById(R.id.layout_background);
+        layoutBackground.setBackground(getDrawable(changeBackground(valueFon)));
+
 
         List<String> types = Arrays.asList(getResources().getStringArray(R.array.type));
         List<String> levels = Arrays.asList(getResources().getStringArray(R.array.level));

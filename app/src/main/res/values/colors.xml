@@ -7,5 +7,6 @@
     <color name="yellow">#FFF000</color>
     <color name="green">#00FF00</color>
     <color name="grey">#535353</color>
+    <color name="material_100">#FFCDD2</color>
     <color name="transparent">#00000000</color>
 </resources>

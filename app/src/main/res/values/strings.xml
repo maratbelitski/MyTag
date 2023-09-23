@@ -25,12 +25,16 @@
 
     <string name="tab_records">Records</string>
     <string name="tab_facts">Facts</string>
+    <string name="tab_backgrounds">Backgrounds</string>
+    <string name="tab_shapes">Shapes</string>
 
     <string name="toolbar_advance">MyTag. Advance</string>
+    <string name="toolbar_setting">MyTag. Setting</string>
 
     <string name="spinner_default">Default</string>
     <string name="spinner_ru">Russian</string>
     <string name="spinner_en">English</string>
+    <string name="spinner_pt">Portuguese</string>
 
     <string name="button_rules">Rules</string>
     <string name="button_ok">OK</string>
@@ -40,12 +44,15 @@
     <string name="button_stop_game">End</string>
     <string name="button_shuffle">Shuffle</string>
     <string name="button_records">Records</string>
+    <string name="button_settings">Settings</string>
     <string name="button_info">Info</string>
     <string name="button_rate_app">Rate app !</string>
 
     <string name="text_info_title">INFORMATION</string>
     <string name="text_snake">"SNAKE"</string>
     <string name="text_classic">"CLASSIC"</string>
+    <string name="text_choose_background">"Choose background"</string>
+    <string name="text_choose_tags">"Choose tags"</string>
     <string name="text_your_records">Best results:</string>
     <string name="text_game">game</string>
     <string name="text_level">size</string>
@@ -61,8 +68,8 @@
     <string name="text_fact_about">FACTS OF SQUIRRELS</string>
     <string name="text_info">Application <b>MyTag</b>  it is an information and entertainment project.
 \nHere you will train your mind and learn a lot of interesting facts about funny squirrel animals!
-\n\nApplication version: 1.0
-\nDate: 08.2023
+\n\nApplication version: 1.1.1
+\nDate: 2023
 \nDeveloper: Belitski Marat
 \nemail: belitski.dev@gmail.com</string>
 
