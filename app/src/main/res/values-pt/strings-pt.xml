@@ -33,7 +33,7 @@
     <string name="text_your_records">Melhores resultados:</string>
     <string name="text_game">JOGO</string>
     <string name="text_level">CAMPO</string>
-    <string name="text_move">MOVIMENTO</string>
+    <string name="text_move">JOGADA</string>
     <string name="text_your_move">Seus movimentos: </string>
     <string name="text_steps_winner">Movimentos feitos: </string>
     <string name="text_end_game">Você terminou o jogo !</string>

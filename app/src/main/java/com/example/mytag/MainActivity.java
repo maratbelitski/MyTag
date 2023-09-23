@@ -76,12 +76,11 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
                     Language selectedItem = (Language) spinner.getSelectedItem();
                     String s = selectedItem.getName();
 
-                    if (s.equalsIgnoreCase("английский")) {
+                    if (s.equalsIgnoreCase("английский") || s.equalsIgnoreCase("Inglês")) {
                         changeLanguage("en");
-
-                    } else if (s.equalsIgnoreCase("russian")) {
+                    } else if (s.equalsIgnoreCase("russian")|| s.equalsIgnoreCase("Russo")) {
                         changeLanguage("ru");
-                    }else if (s.equalsIgnoreCase("portuguese")) {
+                    }else if (s.equalsIgnoreCase("portuguese")|| s.equalsIgnoreCase("Португальский")) {
                         changeLanguage("pt");
                     }
                 }
