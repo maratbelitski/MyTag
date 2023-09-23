@@ -26,8 +26,8 @@
     <string name="button_rate_app">Avalie !</string>
 
     <string name="text_info_title">INFORMAÇÃO</string>
-    <string name="text_snake">"CENTIPEDE"</string>
-    <string name="text_classic">"CLÁSSICAS"</string>
+    <string name="text_snake">"SNAKE"</string>
+    <string name="text_classic">"CLASSIC"</string>
     <string name="text_choose_background">"Escolha o fundo"</string>
     <string name="text_choose_tags">"Escolha as fichas"</string>
     <string name="text_your_records">Melhores resultados:</string>
