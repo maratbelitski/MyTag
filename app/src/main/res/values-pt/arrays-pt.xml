@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--    <b>жирный шрифт</b>-->
+<!--    <i>наклонный шрифт</i>-->
+<!--    <u>подчеркнутый шрифт</u>-->
+
 <resources>
+    <string-array name="level">
+        <item>3x3</item>
+        <item>4x4</item>
+    </string-array>
 
+    <string-array name="type">
+        <item>classic</item>
+        <item>snake</item>
+    </string-array>
 
-    "kkkkkkk"
+    <string-array name="text_angry_squirrel">
+        <item>\"Estou feliz por ti! (não).\"</item>
+        <item>\"Não é um bom resultado.\"</item>
+        <item>\"Esperava mais de ti.\"</item>
+        <item>\"A conversa foi…\"</item>
+        <item>\"Podia ter sido melhor.\"</item>
+        <item>\"Vai treinar!\"</item>
+        <item>\"Vai buscar nozes, bípede!\"</item>
+        <item>\"Sai daqui!\"</item>
+        <item>\"Vais melhorar mais tarde, mas tu não.\"</item>
+        <item>\"Pratique com gatos!\"</item>
+    </string-array>
+
+    <string-array name="facts_about_squirrel">
+        <item>Fato 1.
+\nEsquilos são um gênero de roedores da família dos esquilos.
+\nEsquilos são encontrados em todos os lugares, exceto na Austrália e na Antártida.
+</item>
+        <item>Fato 2.
+\nO gênero esquilo combina cerca de 30 espécies distribuídas no norte e
+América do Sul, Europa e na zona temperada da Ásia.</item>
+        <item>Fato 3.
+\nTipos de esquilos diferem na cor da lã, estrutura do corpo, dieta alimentar,
+estilo de vida e hábitos.</item>
+        <item>Fato 4.
+\nCores diferentes são esquilos: preto, vermelho, marrom, cinza.</item>
+        <item>Fato 5.
+\nEsquilo comum, ou vechsha - o único representante do gênero de proteína em
+fauna da Rússia.</item>
+        <item>Fato 6.
+\nGuaxinins, cobras e corujas são considerados os principais inimigos desses roedores.</item>
+        <item>Fato 7.
+\nDo nome da moeda de troca "bela" vem o nome Moderno de um esquilo.</item>
+        <item>Fato 8.
+\nNa América do Norte, foram encontrados fósseis de um esquilo antigo.</item>
+        <item>Fato 9.
+\nOs esquilos gostam apenas de florestas sombreadas e secas.</item>
+        <item>Fato 10.
+\nOs esquilos existem em nosso planeta há cerca de 50 milhões de anos.
+Durante esse tempo, nenhuma mudança ocorreu com eles.</item>
+        <item>Fato 11.
+\nA menor espécie é considerada um esquilo africano anão.</item>
+        <item>Fato 12.
+\nO animal gosta de comer: durante uma semana, o esquilo come uma quantidade de comida igual ao seu peso.
+O peso de um adulto chega a 2 quilos.</item>
+        <item>Fato 13.
+\nEsquilo-campeão na diversidade da dieta. Esquilos onívoros,
+sua dieta inclui cerca de 150 sementes de árvores diferentes.
+A parte principal é sementes de coníferas: abeto, pinho, cedro, abeto, larício.</item>
+        <item>Fato 14.
+\nEm florestas de Carvalho, o esquilo também não desaparecerá – comerá bolotas e nozes.
+Também no menu de esquilos incluem cogumelos, bagas, ervas, musgos, líquenes, tubérculos e rizomas.
+Se a colheita de nozes não for boa o suficiente, as proteínas se alimentam de rins e
+jovens rebentos de árvores.</item>
+        <item>Fato 15.
+\nEsquilos também podem ser predadores. Além dos alimentos vegetais,
+eles também gostam de comer insetos, ovos e até mesmo pequenos pássaros,
+mamíferos e rãs.</item>
+        <item>Fato 16.
+\nOs roedores de cor preta são caracterizados por uma temperatura corporal elevada.</item>
+        <item>Fato 17.
+\nComo muitos roedores, o esquilo faz reservas para o inverno-eles escondem nozes,
+bolotas, cones e cogumelos nas covas das árvores, e algumas espécies são enterradas no chão.
+Mas muitas vezes o animal esquece onde escondeu sua comida.
+Neste caso, a má memória de esquilos serve a favor da floresta-nozes esquecidas no chão
+eles crescem e reabastecem a floresta com novas árvores.</item>
+        <item>Fato 18.
+\nOs esquilos não hibernam no inverno, mas em geadas fortes podem em vários
+dias para não sair do ninho. O esquilo é um animal solitário.,
+durante o tempo frio os animais podem reunir-se em grupos de três a seis esquilos e
+aqueça-se em um ninho.</item>
+        <item>Fato 19.
+\nO ninho do esquilo é chamado de "gayno", e um animal geralmente dá origem a muitos,
+até 15 casas. Na maioria das vezes, o ninho é arranjado no oco de uma árvore ou em uma casa de passarinho,
+revestindo tudo por dentro com folhas secas, caules, musgo, penas.
+Se não houver uma cavidade ou casa de passarinho adequada, os animais constroem sua casa entre os galhos da árvore,
+a uma altitude de 7-12 metros.</item>
+        <item>Fato 20.
+\nA reprodução em um esquilo ocorre geralmente duas vezes por ano — no inverno e no verão.
+Durante o período de acasalamento, os machos correm atrás das fêmeas, mas as fêmeas escolhem seu próprio par.
+Com um esquilo macho acasala uma vez.</item>
+    </string-array>
 </resources>
