@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
     public void onBackPressed() {
         moveTaskToBack(true);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,13 +58,13 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
         List<Language> languagesList = new ArrayList<>();
         String rus = getResources().getString(R.string.spinner_ru);
         String eng = getResources().getString(R.string.spinner_en);
-        String pt = getResources().getString(R.string.spinner_pt);
+       // String pt = getResources().getString(R.string.spinner_pt);
         String def = getResources().getString(R.string.spinner_default);
 
         languagesList.add(new Language(def, R.drawable.ic_language));
         languagesList.add(new Language(eng, R.drawable.ic_usa));
         languagesList.add(new Language(rus, R.drawable.ic_russia));
-        languagesList.add(new Language(pt, R.drawable.ic_portugal));
+       // languagesList.add(new Language(pt, R.drawable.ic_portugal));
 
         MyAdapter spinnerAdapter = new MyAdapter(this, R.layout.layout_spinner_language, languagesList);
         spinner.setAdapter(spinnerAdapter);
@@ -76,15 +77,22 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
                     Language selectedItem = (Language) spinner.getSelectedItem();
                     String s = selectedItem.getName();
 
-                    if (s.equalsIgnoreCase("английский") || s.equalsIgnoreCase("inglês") ) {
+                    if (s.equalsIgnoreCase("английский")) {
                         changeLanguage("en");
-                    } else if (s.equalsIgnoreCase("russian") || s.equalsIgnoreCase("russo") ) {
+                    } else if (s.equalsIgnoreCase("russian")) {
                         changeLanguage("ru");
-                    }else if (s.equalsIgnoreCase("portuguese") || s.equalsIgnoreCase("португальский") ) {
-                        changeLanguage("pt");
                     }
+
+//                    if (s.equalsIgnoreCase("английский") || s.equalsIgnoreCase("inglês")) {
+//                        changeLanguage("en");
+//                    } else if (s.equalsIgnoreCase("russian") || s.equalsIgnoreCase("russo")) {
+//                        changeLanguage("ru");
+//                    } else if (s.equalsIgnoreCase("portuguese") || s.equalsIgnoreCase("португальский")) {
+//                        changeLanguage("pt");
+//                    }
                 }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
@@ -92,9 +100,9 @@ public class MainActivity extends AppCompatActivity implements ButtonsAnimation 
     }
 
     public void startGame(View view) {
-    Intent intent = new Intent(this, StartActivity.class);
-    startActivity(intent);
-    MainActivity.this.finish();
+        Intent intent = new Intent(this, StartActivity.class);
+        startActivity(intent);
+        MainActivity.this.finish();
     }
 
     public void showRules(View view) {

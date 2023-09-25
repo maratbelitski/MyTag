@@ -8,10 +8,10 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.MyTagtest"
+        applicationId "com.MyTag"
         minSdk 22
         targetSdk 33
-        versionCode 7
+        versionCode 8
         versionName "1.1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
