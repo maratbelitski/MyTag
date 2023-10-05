@@ -22,5 +22,6 @@ MyTag v1.1.1
 Сохранение данных:
 - SharedPreferences;
 - saveInstanceState;
-![Maytag in Google Play](https://play.google.com/store/apps/details?id=com.MyTag&pcampaignid=web_share)
+  
+[Maytag in Google Play](https://play.google.com/store/apps/details?id=com.MyTag&pcampaignid=web_share)
 
